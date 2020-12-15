@@ -1,0 +1,2 @@
+Data cleaning: 
+- in distribution of null values in new_cases and new_deaths, order states by population
