@@ -1,2 +1,4 @@
 
 test notebook.ipynb
+*.csv
+*.twbx
