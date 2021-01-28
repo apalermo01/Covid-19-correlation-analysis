@@ -1,6 +1,8 @@
 # covid-19-data-analysis
 A study on how the COVID-19 responses might be affecting new case and death numbers.
 
+Case and death data was sourced from the Johns Hopkins University's COVID-19 tracking project. Policy data was sourced from data.gov. 
+
 There are 2 notebooks associated with this project: 
 
 ### 1) Covid-19 data analysis.ipynb
@@ -12,11 +14,3 @@ Policies were correlated with two key metrics in case and death numbers: the dif
 ### 2) Covid-19 data cleaning.ipynb
 
 This is the detailed column-by-column data cleaning process that went into preparing the Covid-19 data analysis notebook, including a detailed analysis of invalid datapoints. 
-
-
-### Key Findings
-
-- starting policies related to closing houses of worship is correlated with correlated with a large decrease in case acceleration
-- stopping mask requirements are correlated with a large decrease in cases, but an increase in case and death acceleration
-
-- The fact that these policies are correlated with and increase or decrease in cases does not imply that they caused the decrease. To gain insight into a causal relationship, I plan to introduce a linear regression step that estimates the impact of each policy type on the overall change in cases and deaths. This is a replication of the work done by [Klimek et al.](https://www.nature.com/articles/s41562-020-01009-0?fbclid=IwAR0RLAeAfgUIpGqwlKD8nHvdtbrj_pPvpG54hPWXaATp0vjtw9z47wUfsjs)
