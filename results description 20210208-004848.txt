@@ -1,8 +1,0 @@
-
-    algorithms: ['OLS']
-    parameters: all default
-    data: R squared values
-
-    bins: 
-    {0: [(0, 50), (51, 999)]}
-    
