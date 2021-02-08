@@ -1,0 +1,67 @@
+
+    algorithms: ['OLS', 'Lasso', 'Ridge', 'EN', 'Decision_Tree', 'RF']
+    parameters: All default
+    training test size: 0.1
+    data: R squared values
+
+    all bins: 
+    [(0, 50), (51, 999)] 
+[(0, 10), (11, 999)] 
+
+
+    Comments: 
+
+    ======================================
+
+prepping data
+data prepped
+bins: [(0, 50), (51, 999)]
+time elapsed: 70.12120580673218
+----------------------------------------
+training OLSdone
+time elapsed: 5.784961223602295; R^2 = 0.10203552556686801
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+training Lassodone
+time elapsed: 2.8620753288269043; R^2 = 0.08807454210047061
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+training Ridgedone
+time elapsed: 1.0564219951629639; R^2 = 0.10203617891039907
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+training ENdone
+time elapsed: 3.2081449031829834; R^2 = 0.08104959450345972
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+training Decision_Treedone
+time elapsed: 10.713374853134155; R^2 = 0.13443606844605638
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+training RFtraining RF, num_trees = 10
+done
+time elapsed: 67.21422600746155; R^2 = 0.13432618979234467
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 10), (11, 999)]
+time elapsed: 64.94756364822388
+----------------------------------------
+training OLSdone
+time elapsed: 5.0295021533966064; R^2 = 0.10067233085466809
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+training Lassodone
+time elapsed: 2.355883836746216; R^2 = 0.08665351090525653
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+training Ridgedone
+time elapsed: 0.9878981113433838; R^2 = 0.10067301711716892
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+training ENdone
+time elapsed: 2.321640729904175; R^2 = 0.07701169359886306
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+training Decision_Treedone
+time elapsed: 8.817231893539429; R^2 = 0.14245735029053963
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+training RFtraining RF, num_trees = 10
+done
+time elapsed: 60.369192123413086; R^2 = 0.14245418111932107
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+
+==========================================
