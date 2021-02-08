@@ -1,0 +1,10 @@
+
+    algorithms: ['OLS']
+    parameters: all default
+    data: R squared values
+
+    bins: 
+    [(0, 50), (51, 999)] 
+[(0, 10), (11, 999)] 
+
+    
