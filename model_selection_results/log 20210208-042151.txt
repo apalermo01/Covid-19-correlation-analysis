@@ -1,0 +1,17 @@
+
+    algorithms: ['OLS', 'Lasso', 'Ridge', 'EN', 'Decision_Tree', 'RF']
+    parameters: All default
+    training test size: 0.1
+    data: R squared values
+    
+    all bins: 
+    [(0, 50), (51, 999)] 
+[(0, 10), (11, 999)] 
+
+    
+    Comments: 
+    ======================================
+    prepping datadata prepped
+bins: [(0, 50), (51, 999)]
+time elapsed: 62.9514319896698----------------------------------------training OLSdone
+time elapsed: 5.328034400939941; R^2 = 0.10554235335478934
