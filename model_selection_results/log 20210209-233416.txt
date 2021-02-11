@@ -1,0 +1,2734 @@
+
+    algorithms: ['Decision Tree']
+    parameters: All default
+    training test size: 0.1
+    data: R squared values
+
+    all bins: 
+    [(0, 10), (11, 20), (21, 30), (31, 40), (41, 50), (51, 999)] 
+[(0, 10), (11, 30), (31, 60), (61, 100), (101, 150), (151, 210), (211, 999)] 
+[(0, 20), (21, 40), (41, 60), (61, 100), (101, 140), (141, 200), (201, 999)] 
+
+
+    Comments: 
+
+    ======================================
+
+prepping data
+data prepped
+bins: [(0, 10), (11, 20), (21, 30), (31, 40), (41, 50), (51, 999)]
+time elapsed: 181.3686237335205
+----------------------------------------
+training Decision Tree
+time elapsed: 33.5228328704834; R^2 = 0.17717832934902533
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.51612901687622; R^2 = 0.19807350777384125
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.66152215003967; R^2 = 0.14651151244686111
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.61331248283386; R^2 = 0.1459086041195662
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 75.02836608886719; R^2 = 0.18206011165844282
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 56.41174125671387; R^2 = 0.16423149525980707
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.12193274497986; R^2 = 0.16247492665653063
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.77511429786682; R^2 = 0.1297655974997144
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.48759651184082; R^2 = 0.1720699966619632
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 31.774802923202515; R^2 = 0.18859883129455857
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.72232270240784; R^2 = 0.19251203685008822
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.1831579208374; R^2 = 0.17705953234577476
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.765735387802124; R^2 = 0.14082853419788333
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 31.954153537750244; R^2 = 0.18652766488726913
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.47921180725098; R^2 = 0.13585462351603583
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.26533889770508; R^2 = 0.15293542777066227
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 31.4581081867218; R^2 = 0.1696470056711641
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.42980360984802; R^2 = 0.15561064996387863
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.59808826446533; R^2 = 0.1819187248794848
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.518686056137085; R^2 = 0.15306068517782756
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.92202019691467; R^2 = 0.17083104289118822
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.974411487579346; R^2 = 0.17707396107850393
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.352869510650635; R^2 = 0.19250174025180344
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.332544803619385; R^2 = 0.1412621257184844
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.29944658279419; R^2 = 0.1484928235619557
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.17120003700256; R^2 = 0.19905301196238323
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.33010244369507; R^2 = 0.1810705677029416
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.08020639419556; R^2 = 0.14833852022021332
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.66260385513306; R^2 = 0.15102606497044357
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.634336948394775; R^2 = 0.18954767261096328
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.087372064590454; R^2 = 0.1380202887718427
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.34938883781433; R^2 = 0.17931259460647075
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.49616360664368; R^2 = 0.14488936150376241
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.98629808425903; R^2 = 0.1703789899662298
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.16887283325195; R^2 = 0.1475208584198907
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.746469497680664; R^2 = 0.18201063579528087
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.52456307411194; R^2 = 0.17848954262140915
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.80779480934143; R^2 = 0.15879780346119676
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.17723822593689; R^2 = 0.14911326509906087
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.13734245300293; R^2 = 0.15422672604438536
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.44238805770874; R^2 = 0.1736277656722124
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.1380295753479; R^2 = 0.16366590175812123
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.60447025299072; R^2 = 0.1288867002678873
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.05090689659119; R^2 = 0.18725488330085782
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.219080686569214; R^2 = 0.20059282551219282
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.806376457214355; R^2 = 0.18405014438724276
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.6034791469574; R^2 = 0.14114520971267552
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.62475395202637; R^2 = 0.15507260398262457
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.59076476097107; R^2 = 0.1443086939063044
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.61761426925659; R^2 = 0.1656800609623431
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.903672218322754; R^2 = 0.17856499547119653
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.259708404541016; R^2 = 0.17251681285553
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.10000920295715; R^2 = 0.11413044336220923
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.80075788497925; R^2 = 0.18780191818600078
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.9729483127594; R^2 = 0.1774901128310823
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.95566964149475; R^2 = 0.1864379337140345
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 31.811668157577515; R^2 = 0.18583287889187416
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.52356672286987; R^2 = 0.15482566023988797
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.95561218261719; R^2 = 0.1791862190672492
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.392051458358765; R^2 = 0.16295806409259528
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.14784812927246; R^2 = 0.17485070290020477
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.82287931442261; R^2 = 0.14500560149219377
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.13483643531799; R^2 = 0.20232325154292896
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.74071788787842; R^2 = 0.19023371258092303
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.19378066062927; R^2 = 0.17461652367698366
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.38063192367554; R^2 = 0.1409674681553864
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.825732707977295; R^2 = 0.1866077054976948
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.592687129974365; R^2 = 0.16182501261545834
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.824004888534546; R^2 = 0.1832989664339556
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.17717528343201; R^2 = 0.20533510876436478
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.42599940299988; R^2 = 0.13311838380516527
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.13868522644043; R^2 = 0.147861260200975
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.911701679229736; R^2 = 0.17455577292130886
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.43963313102722; R^2 = 0.17752929404696438
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.87418079376221; R^2 = 0.1529060332660832
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.36624455451965; R^2 = 0.16140615196637031
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.721680879592896; R^2 = 0.1793733503409367
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.44044280052185; R^2 = 0.21359149444583703
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.00152516365051; R^2 = 0.17799116729324393
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.403085708618164; R^2 = 0.19000429608617853
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.63561654090881; R^2 = 0.14715928062289008
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.341256856918335; R^2 = 0.1898981213627895
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.367857694625854; R^2 = 0.14717364321641313
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.64124774932861; R^2 = 0.18258793259872397
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.388590812683105; R^2 = 0.1669969635512104
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.14844083786011; R^2 = 0.16837886237754307
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.45214486122131; R^2 = 0.2022156442670937
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.70901846885681; R^2 = 0.16122328710441092
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.50894784927368; R^2 = 0.18410632433040464
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.747414350509644; R^2 = 0.1565578736606852
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.80248236656189; R^2 = 0.14957525640332525
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.7777099609375; R^2 = 0.16159039648701523
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.725780963897705; R^2 = 0.16269365574419814
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 34.28678870201111; R^2 = 0.14979805171794447
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 33.43473768234253; R^2 = 0.19704040694819402
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.28976821899414; R^2 = 0.16999653447041363
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.87793850898743; R^2 = 0.15200270421779372
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.25073719024658; R^2 = 0.16717513620314173
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.51506567001343; R^2 = 0.1602443730818779
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 32.22485423088074; R^2 = 0.21958785184148244
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 10), (11, 30), (31, 60), (61, 100), (101, 150), (151, 210), (211, 999)]
+time elapsed: 210.5816080570221
+----------------------------------------
+training Decision Tree
+time elapsed: 39.585519313812256; R^2 = 0.2210640093346451
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.98665428161621; R^2 = 0.19272479139928
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.39498829841614; R^2 = 0.28145139825448495
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.566725730895996; R^2 = 0.22674302645590216
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.22100329399109; R^2 = 0.25325662702789953
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.68287372589111; R^2 = 0.23483341051852558
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.897658824920654; R^2 = 0.14597001213369143
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.12379789352417; R^2 = 0.22976506333212532
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.14225673675537; R^2 = 0.23545712560108112
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.92895245552063; R^2 = 0.24668552587015924
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.04607939720154; R^2 = 0.20922180897248532
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.74717664718628; R^2 = 0.26944590181762595
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.22846865653992; R^2 = 0.22072079050372106
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.51672148704529; R^2 = 0.2252265638317522
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.34372687339783; R^2 = 0.22376692062970305
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 40.21769189834595; R^2 = 0.1963425260397884
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.775861978530884; R^2 = 0.23678466528117814
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 40.30896711349487; R^2 = 0.25151096668022144
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.8534255027771; R^2 = 0.19299929296153562
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.7084527015686; R^2 = 0.2596310333276486
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.38711953163147; R^2 = 0.25603243474332915
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.987865686416626; R^2 = 0.22412196741211043
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.99682092666626; R^2 = 0.27295426012523216
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.42609882354736; R^2 = 0.2111491853388977
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.59553146362305; R^2 = 0.20537599746067126
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.754340171813965; R^2 = 0.22967507344227056
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.02409815788269; R^2 = 0.2603545848855444
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.86963748931885; R^2 = 0.24299516789261955
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.160441637039185; R^2 = 0.25967280235753587
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.78544616699219; R^2 = 0.2781408607906293
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.476425886154175; R^2 = 0.20317382505142756
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.83530783653259; R^2 = 0.21499735904405193
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.99744272232056; R^2 = 0.22862819489201935
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.7753119468689; R^2 = 0.20332201470472633
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.94799780845642; R^2 = 0.22639057593035372
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.3081419467926; R^2 = 0.276240699299629
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.9851279258728; R^2 = 0.24318057361905576
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.58607721328735; R^2 = 0.18208466755321828
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.14504814147949; R^2 = 0.2519003711995834
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.506977558135986; R^2 = 0.17074342070322301
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.56624412536621; R^2 = 0.22754173147841295
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.59463429450989; R^2 = 0.17933955697858683
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.82470464706421; R^2 = 0.20224417445019383
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.362131118774414; R^2 = 0.24896394563569646
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.357404470443726; R^2 = 0.18938182741636156
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.63996863365173; R^2 = 0.20074537690208205
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.556413888931274; R^2 = 0.23666611076594024
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.86660075187683; R^2 = 0.22120139453236431
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.77535557746887; R^2 = 0.19341870570518582
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.47762584686279; R^2 = 0.19476476617087302
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.71397686004639; R^2 = 0.23547417237393642
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.398958921432495; R^2 = 0.248926258394359
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.04223942756653; R^2 = 0.2490393156987427
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.216224670410156; R^2 = 0.19790538333027063
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.70103073120117; R^2 = 0.22576293710547857
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 40.02071666717529; R^2 = 0.22953870200633697
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 40.224583864212036; R^2 = 0.27763939208324595
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.95665001869202; R^2 = 0.2341438606846008
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 40.020976305007935; R^2 = 0.19723694025870542
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 40.57648968696594; R^2 = 0.1943763379258533
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 40.26148080825806; R^2 = 0.2639422136921834
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.92064380645752; R^2 = 0.27090449076555234
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.0015652179718; R^2 = 0.26770137621674583
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.200557470321655; R^2 = 0.268769107160136
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.82019543647766; R^2 = 0.24274375126766867
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.89988589286804; R^2 = 0.2677154040377865
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.53115487098694; R^2 = 0.2576674756036851
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.588786363601685; R^2 = 0.24051359936582262
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.75800442695618; R^2 = 0.20859593607406524
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.81118083000183; R^2 = 0.21784236997528061
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.62701177597046; R^2 = 0.18555725146176416
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.64242768287659; R^2 = 0.2686226733034136
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.91953158378601; R^2 = 0.20622704490199195
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 41.947614431381226; R^2 = 0.28832159078004593
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.78458070755005; R^2 = 0.2122412744155293
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 40.37193727493286; R^2 = 0.22917177746187423
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.37277555465698; R^2 = 0.22037159849499366
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 40.08125948905945; R^2 = 0.23593757122807568
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.193798303604126; R^2 = 0.2686980710161724
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.70599412918091; R^2 = 0.2604757647542041
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 40.801414489746094; R^2 = 0.20877124134897396
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.83678579330444; R^2 = 0.22354837115277248
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 40.74098467826843; R^2 = 0.18913700171867143
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.00857138633728; R^2 = 0.20526304633294934
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.30461621284485; R^2 = 0.19606507833737996
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.271389961242676; R^2 = 0.24800603766463913
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.585639238357544; R^2 = 0.24997620024522527
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.88326978683472; R^2 = 0.22780221511169896
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.82824754714966; R^2 = 0.20337238641417255
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.95940566062927; R^2 = 0.22470816827991125
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.93187141418457; R^2 = 0.23367355395541678
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.34128928184509; R^2 = 0.25766745504619515
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.62695050239563; R^2 = 0.2648127626997283
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.37886834144592; R^2 = 0.20743047294919414
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.46329617500305; R^2 = 0.17601182761899536
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.40205359458923; R^2 = 0.23490120633454947
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.56177115440369; R^2 = 0.22428925314333048
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.36824059486389; R^2 = 0.20845263098287725
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.36315655708313; R^2 = 0.22352708912322639
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.19889187812805; R^2 = 0.23101205011813852
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 20), (21, 40), (41, 60), (61, 100), (101, 140), (141, 200), (201, 999)]
+time elapsed: 212.6087200641632
+----------------------------------------
+training Decision Tree
+time elapsed: 40.54854440689087; R^2 = 0.28420175431909045
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.00842571258545; R^2 = 0.19918893727597076
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.15654897689819; R^2 = 0.15640259082465124
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.28516936302185; R^2 = 0.2333258250129263
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.71771740913391; R^2 = 0.19839524198755065
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.589646339416504; R^2 = 0.2301836618113975
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.304173707962036; R^2 = 0.2787703923386884
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.734387159347534; R^2 = 0.18792313166158703
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.28183627128601; R^2 = 0.24839332715644458
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.740477323532104; R^2 = 0.23938271511476483
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.79895520210266; R^2 = 0.22147489654334207
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.7915198802948; R^2 = 0.24117817351590753
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.88613033294678; R^2 = 0.2131441055044062
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.87726092338562; R^2 = 0.16996235243169422
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.82760739326477; R^2 = 0.2541709361926353
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.521968841552734; R^2 = 0.2529435923986888
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.470885276794434; R^2 = 0.21476402124587468
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.33967900276184; R^2 = 0.25193841285811047
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.29581832885742; R^2 = 0.18573215005342758
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.417519092559814; R^2 = 0.23879199444103205
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.93215274810791; R^2 = 0.2665657124488846
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.79793977737427; R^2 = 0.26995026375612285
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.977246046066284; R^2 = 0.2062118258523148
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.43527340888977; R^2 = 0.2232437832532187
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.435978412628174; R^2 = 0.22961167523299186
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.73856210708618; R^2 = 0.20052665528871627
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.04895806312561; R^2 = 0.23249366441403774
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.359105348587036; R^2 = 0.2521871240521566
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.87544250488281; R^2 = 0.2797335785788939
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.30233812332153; R^2 = 0.22282350761066538
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.18407893180847; R^2 = 0.2105310789627921
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.46921491622925; R^2 = 0.19070011632844508
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.42689538002014; R^2 = 0.2669868447930126
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.04392123222351; R^2 = 0.24830313860847142
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.291574239730835; R^2 = 0.24481486059551005
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.35892915725708; R^2 = 0.2510331395766702
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.55537128448486; R^2 = 0.21537211363006814
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.99586725234985; R^2 = 0.21797217924718604
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.51230216026306; R^2 = 0.22480181853994008
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.6576623916626; R^2 = 0.24493660536272954
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.23986554145813; R^2 = 0.2764116401412994
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.56203603744507; R^2 = 0.24393041288914274
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.44823098182678; R^2 = 0.22185587324606526
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.768529415130615; R^2 = 0.24337088473326363
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.40260338783264; R^2 = 0.21427992257930673
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.734251260757446; R^2 = 0.24980331666416178
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.98061227798462; R^2 = 0.2133787452110244
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.41296744346619; R^2 = 0.2601841914473676
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.154603242874146; R^2 = 0.18137438136291417
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.235204458236694; R^2 = 0.19187337476375654
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.95862293243408; R^2 = 0.22300650438356295
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.61586380004883; R^2 = 0.23883805518440182
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.487101793289185; R^2 = 0.17997324969472084
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.95670533180237; R^2 = 0.22038495514073975
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.86592507362366; R^2 = 0.22619824703298075
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.01179337501526; R^2 = 0.269104215354121
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.967076778411865; R^2 = 0.221098340902237
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.84045886993408; R^2 = 0.27011699265886324
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.661107540130615; R^2 = 0.16334007563678055
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.215784788131714; R^2 = 0.22935447425630906
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.59953832626343; R^2 = 0.23691290572654
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.90976428985596; R^2 = 0.25915863069055045
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.04654812812805; R^2 = 0.21799384024710233
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.81950521469116; R^2 = 0.23611251826331225
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.67097234725952; R^2 = 0.20668127608787856
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.348543643951416; R^2 = 0.20326779098902747
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.0475594997406; R^2 = 0.2018288619342078
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 35.927002906799316; R^2 = 0.2073784287292425
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.1170334815979; R^2 = 0.2479469782499889
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.76331067085266; R^2 = 0.23655404623270082
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.07540416717529; R^2 = 0.2926022784017692
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.95094633102417; R^2 = 0.2579503460668393
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.481996059417725; R^2 = 0.17410639988816345
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.39969754219055; R^2 = 0.23256107811488813
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.19595265388489; R^2 = 0.2123060877179166
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 39.174678564071655; R^2 = 0.25596017045118635
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.233282804489136; R^2 = 0.21773076892218746
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.80894374847412; R^2 = 0.24416705447729525
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.12109899520874; R^2 = 0.25895142979229724
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.267356872558594; R^2 = 0.21772148781325362
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.590561389923096; R^2 = 0.264965349496883
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.01222515106201; R^2 = 0.21603434504199792
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.42053699493408; R^2 = 0.2461019264224037
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.248809576034546; R^2 = 0.18860272030388492
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.00912928581238; R^2 = 0.2801330235696369
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.51679491996765; R^2 = 0.26115678229571293
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.32427668571472; R^2 = 0.2657601711144726
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.25636148452759; R^2 = 0.2641912261855247
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.30565333366394; R^2 = 0.20750531653571014
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.453428983688354; R^2 = 0.2152876084834876
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.899847984313965; R^2 = 0.28470818258638675
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.468873262405396; R^2 = 0.2504994457184422
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.853984117507935; R^2 = 0.24083077650200269
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.89904761314392; R^2 = 0.28203835275341427
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 38.04788422584534; R^2 = 0.26306688404470846
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 37.379997968673706; R^2 = 0.285213811630863
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.364526987075806; R^2 = 0.2883300973346711
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.490046977996826; R^2 = 0.26658907018308386
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.592554807662964; R^2 = 0.21721872378889417
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+training Decision Tree
+time elapsed: 36.487005949020386; R^2 = 0.23049780462845215
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision Tree done 
+
+
+
+
+==========================================
+
+Done!
+time elapsed: 14027.096827983856

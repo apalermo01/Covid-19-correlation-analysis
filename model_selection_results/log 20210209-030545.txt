@@ -1,0 +1,31 @@
+
+algorithms: ['Least Squares']
+parameters: All default
+training test size: 0.1
+data: R squared values
+
+all bins: 
+[(0, 50), (51, 999)] 
+
+
+Comments: 
+
+======================================
+
+prepping data
+data prepped
+bins: [(0, 50), (51, 999)]
+time elapsed: 83.13961386680603
+----------------------------------------
+training Least Squares
+time elapsed: 5.94253134727478; R^2 = 0.08366645985420551
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+Least Squares done 
+
+
+
+
+==========================================
+
+Done!
+time elapsed: 92.3273663520813
