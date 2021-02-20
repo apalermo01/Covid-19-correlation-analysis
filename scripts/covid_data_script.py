@@ -8,6 +8,8 @@ import us
 import requests
 import policy_dict
 import time
+import os
+import json
 
 
 def retrieve_data(load_local):
@@ -320,6 +322,10 @@ def join_policies(case_df,
         return pd.date_range(start=date+timedelta(days=start_move),
                              end=date+timedelta(days=stop_move))
 
+    # Ensure all date columns are datetime
+    case_df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
+    policy_df['date'] = pd.to_datetime(df2['date'], format='%Y-%m-%d')
+
     # Make list of all policies.
     all_policies = policy_df['full_policy'].unique()
 
@@ -406,5 +412,356 @@ def join_policies(case_df,
     return df3
 
 
+def county_split(df, test_size):
+    """
+    """
+    all_counties = df['full_loc_name'].unique()
+
+    # shuffle the list
+    np.random.shuffle(all_counties)
+
+    # split the data
+    counties_test = all_counties[: int(len(all_counties)*test_size)]
+    counties_train = all_counties[int(len(all_counties)*test_size):]
+
+    df_test = df[df['full_loc_name'].isin(counties_test)]
+    df_train = df[df['full_loc_name'].isin(counties_train)]
+
+    return df_test, df_train
+
+
+def train_model(df_train_proc,
+                results_df,
+                model_id,
+                model,
+                metrics_dict,
+                bin_id,
+                K=10,
+                verbose=True,
+                save_out_log=True,
+                log_file="log.txt",):
+    """Function to train models using K-fold cross validation
+    Parameters
+    -----------
+    df_train_proc: DataFrame
+        Processed dataframe with features and targets
+    results_df: DataFrame
+        MultiIndex dataframe summarizing results
+    model_id: string
+        Unique identifier for model (e.g. 'Lasso' for lasso regression)
+    model: call to an sklearn object
+        call to the models constructor method
+    metrics_dict: dictionary
+        dictionary of metrics to measure performance: key=id, value=method call
+    bin_id: integer
+        unique ID of bin distrubution (use for outputs and logging)
+    K: integer
+        number of cross-validation folds
+    verbose: boolean
+        If true, output details to console
+    save_out_log: boolean
+        If true, save the results of verbose output to a text file
+    log_file: string (filepath)
+        File path to log output file
+    Returns
+    ----------
+    """
+    # Initialize results dictionary
+    results_dict = {metric: [] for metric in metrics_dict.keys()}
+
+    # Get unique list of counties to shuffle
+    counties = df_train_proc[('info', 'full_loc')].unique()
+
+    # shuffle the counties
+    np.random.shuffle(counties)
+    batch_size = int(len(counties) / K)
+
+    # Logging and outputs.
+    msg1 = f"number of cross-validation folds: {K}"
+    msg2 = f"num counties in validation set: {batch_size}"
+
+    if verbose:
+        print(msg1)
+        print(msg2)
+    if save_out_log:
+        with open(log_file, "a") as log:
+            log.write(msg1)
+            log.write(msg2)
+
+    # Train models K times, each time leaving out a different portion of the
+    # data fro cross-validation.
+    for k in range(K):
+
+        # Select the train and validation portion.
+        df_train = df_train_proc[~df_train_proc[
+            ('info', 'full_loc')].isin(
+                counties[k*batch_size:(k+1)*batch_size])]
+
+        df_validate = df_train_proc[df_train_proc[
+            ('info', 'full_loc')].isin(
+                counties[k*batch_size:(k+1)*batch_size])]
+
+        # Split into features and targets
+        X_train = df_train.loc[:, df_train.columns[5:]].values
+        y_train = df_train.loc[:, ('info', 'new_cases_1e6')].values
+
+        X_validate = df_validate.loc[:, df_validate.columns[5:]].values
+        y_validate = df_validate.loc[:, ('info', 'new_cases_1e6')].values
+
+        # Train the model
+        model.fit(X_train, y_train)
+
+        # Calculate scores.
+        for metric in metrics_dict.keys():
+            score = metrics_dict[metric](y_validate, model.predict(X_validate))
+
+            # Append scores to the output objects
+            results_dict[metric].append(score)
+            results_df.loc[(metric, k), (bin_id, model_id)] = score
+
+        # Outputs
+        results = [(str(metric) + ": " + str(results_dict[metric][k]))
+                   for metric in metrics_dict.keys()]
+
+        msg = f"fold: {k}, scores: {results}"
+        if verbose:
+            print(msg)
+        if save_out_log:
+            with open(log_file, "a") as log:
+                log.write(msg)
+
+    return results_dict, results_df, model.get_params()
+
+
+def loop_models(df_train_proc,
+                results_df,
+                models_dict,
+                metrics_dict,
+                bin_id,
+                K=10,
+                verbose=True,
+                save_out_log=True,
+                log_file="log.txt"):
+    """Loop through and train each model.
+    Parameters
+    -----------
+    df_train_proc: DataFrame
+        Processed dataframe with features and targets
+    results_df: DataFrame
+        MultiIndex dataframe summarizing results
+    models_dict: dictionary
+        dictionary of models: key=id, value=constructor
+    metrics_dict: dictionary
+        dictionary of metrics to measure performance: key=id, value=method call
+    bin_id: integer
+        unique ID of bin distrubution (use for outputs and logging)
+    K: integer
+        Number of folds for cross-validation
+    verbose: boolean
+        If true, output details to console
+    save_out_log: boolean
+        If true, save the results of verbose output to a text file
+    log_file: string (filepath)
+        File path to log output file
+    Returns
+    -----------
+    results: dictionary
+    results_df: DataFrame
+    """
+
+    # declare an empty dictionary to hold results
+    results = {}
+
+    # loop through all the models passed
+    for model_id in models_dict.keys():
+
+        # Output status.
+        msg = f"running models: {model_id}"
+        if verbose:
+            print(msg)
+        if save_out_log:
+            with open(log_file, "a") as log:
+                log.write(msg)
+
+        # declare empty dictionary for results from this one run
+        model_results = {}
+        scores, results_df, params = train_model(df_train_proc=df_train_proc,
+                                                 results_df=results_df,
+                                                 model_id=model_id,
+                                                 model=models_dict[model_id],
+                                                 metrics_dict=metrics_dict,
+                                                 bin_id=bin_id,
+                                                 K=K,
+                                                 verbose=verbose,
+                                                 save_out_log=save_out_log,
+                                                 log_file=log_file,)
+
+        # Save the results in a dictionary
+        model_results['params'] = params
+        model_results['scores'] = scores
+        results[model_id] = model_results
+
+    return results, results_df
+
+
+def run_batch(df_train,
+              df2_preprocessed,
+              bins_dict,
+              models_dict,
+              metrics_dict,
+              K=10,
+              verbose=True,
+              save_out_log=True,
+              save_json_output=True,
+              log_file="log.txt",
+              json_file="results.json",
+              overwrite=True):
+    """For each set of bins, loop through every model and do cross validation.
+    Parameters
+    -----------
+    df_train: DataFrame
+        Processed training dataframe with case info
+    df2_preprocessed: DataFrame
+        Processed policy dataframe
+    bins_dict: dictionary
+        dictionary of bins: key=id, value=list of bins
+    models_dict: dictionary
+        dictionary of models: key=id, value=constructor
+    metrics_dict: dictionary
+        dictionary of metrics to measure performance: key=id, value=method call
+    K: integer
+        Number of folds for cross-validation
+    verbose: boolean
+        If true, output details to console
+    save_out_log: boolean
+        If true, save the results of verbose output to a text file
+    save_json_output: boolean
+        If true, save the final results to a json file
+    log_file: string (filepath)
+        File path to log output file
+    json_file: string (filepath)
+        File path to json output file
+    overwrite: boolean
+        If true, delete output logs if names overlap
+        (avoids accidental overwritting)
+    Returns
+    ----------
+    results_df: DataFrame
+        multi-indexed DataFrame with all metrics
+    """
+
+    # Initialize dictionary for results (for json outputs).
+    results = {}
+
+    # Initialize multi-index DataFrame for results.
+    all_bins = list(bins_dict.keys())
+    models = list(models_dict.keys())
+    metrics = list(metrics_dict.keys())
+
+    cols = pd.MultiIndex.from_product(
+        [all_bins, models], names=["bin id", "model"])
+    index = pd.MultiIndex.from_product(
+        [metrics, range(K)], names=["metric", "sample"])
+
+    results_df = pd.DataFrame(columns=cols, index=index)
+
+    # Delete old log files if overwritting and the file already exists.
+    if overwrite & os.path.exists(log_file):
+        os.remove(log_file)
+    if overwrite & os.path.exists(json_file):
+        os.remove(json_file)
+
+    # loop through all bin types.
+    for i, bin_id in enumerate(bins_dict):
+        bins_list = bins_dict[bin_id]
+
+        # Output to console and/or log file.
+        msg = "bins: {}".format(bins_list)
+        if verbose:
+            print(msg)
+        if save_out_log:
+            with open(log_file, "a") as log:
+                log.write(msg)
+
+        # Feature engineering with the selected bins.
+        df_train_proc = join_policies(case_df=df_train,
+                                      policy_df=df2_preprocessed,
+                                      output=True,
+                                      bins_list=bins_list,
+                                      state_output=False)
+
+        # Train all models for the given bin
+        model_results, results_df = loop_models(df_train_proc=df_train_proc,
+                                                results_df=results_df,
+                                                models_dict=models_dict,
+                                                metrics_dict=metrics_dict,
+                                                bin_id=bin_id,
+                                                K=K,
+                                                verbose=verbose,
+                                                save_out_log=save_out_log,
+                                                log_file=log_file)
+
+        # Add the dictionary of results to master dictionary
+        model_results['bins'] = bins_list
+        results[bin_id] = model_results
+
+    # Save the json output
+    if save_json_output:
+        if overwrite & os.path.exists(json_file):
+            os.remove(json_file)
+
+        with open(json_file, 'w') as file:
+            json.dump(results, file)
+
+    # Return the results dataframe
+    return results_df
+
+
 if __name__ == "__main__":
+
+    from sklearn.linear_model import LinearRegression, Ridge
+    from sklearn.metrics import r2_score, mean_squared_error
     print("covid data script loaded")
+
+    bins_dict = {
+        0: [(0, 10), (11, 999)],
+        1: [(0, 20), (21, 999)],
+        }
+
+    models_dict = {
+        'OLS': LinearRegression(),
+        'Ridge': Ridge()
+        }
+
+    metrics_dict = {
+        'R^2': r2_score,
+        'MSE': mean_squared_error
+        }
+
+    # retrieve and load the cleaned data
+    df, df2 = retrieve_data(load_local=True)
+
+    # preprocess df2
+    df2_preprocessed = prep_policy_data(df2)
+
+    # df_test, df_train = county_split(df, test_size=0.2)
+
+    # load df_train from a csv file
+    df_train = pd.read_csv("df_train_1.csv", index_col=0)
+
+    output_file_name = "run_2_20_1_train_from_csv"
+    results_df = run_batch(df_train=df_train,
+                           df2_preprocessed=df2_preprocessed,
+                           bins_dict=bins_dict,
+                           models_dict=models_dict,
+                           metrics_dict=metrics_dict,
+                           K=10,
+                           verbose=True,
+                           save_out_log=True,
+                           save_json_output=True,
+                           log_file="{}.txt".format(output_file_name),
+                           json_file="{}.json".format(output_file_name),
+                           overwrite=True)
+
+    # save the results df
+    results_df.to_csv("{}_results_df.csv".format(output_file_name))
