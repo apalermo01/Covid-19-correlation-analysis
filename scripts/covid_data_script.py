@@ -11,13 +11,20 @@ import time
 import os
 import json
 
+# set directories
+DATASETS_DIR = "local_datasets/"
+SCRIPTS_DIR = "scripts/"
+RESULTS_DIR = "results/"
+
 
 def retrieve_data(load_local):
     """Load the case and policy data."""
 
     if load_local:
-        df = pd.read_csv("case_data_clean.csv", index_col=0)
-        df2 = pd.read_csv("policy_data_clean.csv", index_col=0)
+        df = pd.read_csv(
+            "{}case_data_clean.csv".format(DATASETS_DIR), index_col=0)
+        df2 = pd.read_csv(
+            "{}policy_data_clean.csv".format(DATASETS_DIR), index_col=0)
 
         # Convert date fields to datetime
         df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
@@ -323,8 +330,8 @@ def join_policies(case_df,
                              end=date+timedelta(days=stop_move))
 
     # Ensure all date columns are datetime
-    case_df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
-    policy_df['date'] = pd.to_datetime(df2['date'], format='%Y-%m-%d')
+    case_df['date'] = pd.to_datetime(case_df['date'], format='%Y-%m-%d')
+    policy_df['date'] = pd.to_datetime(policy_df['date'], format='%Y-%m-%d')
 
     # Make list of all policies.
     all_policies = policy_df['full_policy'].unique()
@@ -413,7 +420,7 @@ def join_policies(case_df,
 
 
 def county_split(df, test_size):
-    """
+    """Documentation pending. 
     """
     all_counties = df['full_loc_name'].unique()
 
