@@ -17,6 +17,7 @@ SCRIPTS_DIR = "scripts/"
 RESULTS_DIR = "results/"
 
 
+
 def retrieve_data(load_local):
     """Load the case and policy data."""
 
@@ -35,8 +36,8 @@ def retrieve_data(load_local):
             'https://query.data.world/s/jbgdegbanosfmgly7etz2gxqsbhflk'
             )
         html = requests.get(
-            ("https://catalog.data.gov/dataset/"
-             "covid-19-state-and-county-policy-orders")
+            "https://catalog.data.gov/dataset/" + \
+            "covid-19-state-and-county-policy-orders-9408a"
         ).text
 
         policy_file = html.split(
@@ -46,12 +47,17 @@ def retrieve_data(load_local):
             .split("\">")[0]
         df2 = pd.read_csv(policy_file)
 
+        df, df2 = clean_data(df, df2)
+
+    # save as csv
+    #df.to_csv(DATASETS_DIR + "/case_data_clean.csv")
+
     return df, df2
 
 
 def clean_data(df, df2):
     """Clean the case and policy data."""
-
+    print("data cleaning in progress")
     # Cleaning df ############################################################
 
     # Rename columns.
