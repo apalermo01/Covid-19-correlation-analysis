@@ -1,0 +1,628 @@
+Lawrence, Illinois
+Gilpin, Colorado
+Jefferson, Colorado
+Kent, Rhode Island
+Escambia, Florida
+Floyd, Kentucky
+Gordon, Georgia
+Wabash, Indiana
+Shawnee, Kansas
+Sandusky, Ohio
+Grant, New Mexico
+Ouray, Colorado
+Venango, Pennsylvania
+Franklin, Tennessee
+Warren, Virginia
+Bibb, Alabama
+Ingham, Michigan
+Pocahontas, West Virginia
+Iron, Wisconsin
+Chittenden, Vermont
+Benton, Arkansas
+Trego, Kansas
+Stanislaus, California
+Cross, Arkansas
+Hempstead, Arkansas
+Lincoln, Colorado
+Lea, New Mexico
+Washington, Kentucky
+Henderson, North Carolina
+Kalamazoo, Michigan
+Hall, Georgia
+Randolph, Alabama
+Clearwater, Idaho
+Roosevelt, Montana
+Grant, South Dakota
+Rensselaer, New York
+Monroe, Kentucky
+Oxford, Maine
+Oglala Lakota, South Dakota
+Warren, New York
+Lawrence, South Dakota
+Hampshire, West Virginia
+Decatur, Kansas
+Fayette, Pennsylvania
+Orange, California
+Lewis, Tennessee
+Kingfisher, Oklahoma
+Ross, Ohio
+Lewis, New York
+Cass, Missouri
+Yazoo, Mississippi
+Colquitt, Georgia
+Columbia, Georgia
+Spartanburg, South Carolina
+Stewart, Tennessee
+Dubois, Indiana
+Young, Texas
+Dickey, North Dakota
+Green, Kentucky
+Union, Arkansas
+Sevier, Utah
+Elk, Kansas
+Stephens, Texas
+Indiana, Pennsylvania
+Cook, Georgia
+Burnett, Wisconsin
+Oglethorpe, Georgia
+Tallahatchie, Mississippi
+Manassas Park, Virginia
+St. Clair, Alabama
+Neosho, Kansas
+Rush, Kansas
+Socorro, New Mexico
+Norfolk, Massachusetts
+Adair, Oklahoma
+Tripp, South Dakota
+Hennepin, Minnesota
+Benton, Minnesota
+Lincoln, Missouri
+Nemaha, Nebraska
+Orange, Virginia
+Dona Ana, New Mexico
+Overton, Tennessee
+Wakulla, Florida
+Franklin, Virginia
+Schuyler, Missouri
+Mineral, West Virginia
+Van Zandt, Texas
+Orleans, Louisiana
+Boone, Iowa
+Jasper, Indiana
+Coke, Texas
+Hardin, Ohio
+Meade, South Dakota
+Daviess, Kentucky
+Burleson, Texas
+Sumter, South Carolina
+Wolfe, Kentucky
+Henry, Alabama
+Wythe, Virginia
+Barnwell, South Carolina
+Pipestone, Minnesota
+Washington, Ohio
+Seminole, Georgia
+Braxton, West Virginia
+Sharp, Arkansas
+Labette, Kansas
+Oldham, Kentucky
+Coffee, Tennessee
+Dukes, Massachusetts
+Chaves, New Mexico
+Nuckolls, Nebraska
+San Juan, Washington
+Denali, Alaska
+Golden Valley, Montana
+Monterey, California
+Cecil, Maryland
+Bingham, Idaho
+McCurtain, Oklahoma
+Ogemaw, Michigan
+Powell, Kentucky
+Napa, California
+Cherokee, Georgia
+Harney, Oregon
+Chemung, New York
+Chickasaw, Mississippi
+Marshall, Kentucky
+Taylor, Iowa
+Liberty, Montana
+Keya Paha, Nebraska
+McPherson, South Dakota
+Vinton, Ohio
+Hooker, Nebraska
+Fremont, Iowa
+Gwinnett, Georgia
+Covington, Alabama
+East Carroll, Louisiana
+Cumberland, Virginia
+Iberville, Louisiana
+Jefferson, Oklahoma
+Skagway, Alaska
+Carroll, Illinois
+Mecklenburg, Virginia
+Rio Arriba, New Mexico
+Story, Iowa
+Warren, Missouri
+Lincoln, Oklahoma
+Dawson, Nebraska
+Marshall, Illinois
+York, Virginia
+Schleicher, Texas
+Franklin, Vermont
+Carteret, North Carolina
+Benton, Indiana
+Knott, Kentucky
+DeKalb, Georgia
+Mississippi, Missouri
+Hancock, Ohio
+Wright, Minnesota
+Wayne, West Virginia
+Madison, Mississippi
+Houston, Tennessee
+Pitkin, Colorado
+Russell, Alabama
+Inyo, California
+Montgomery, Missouri
+Osceola, Michigan
+Dunn, Wisconsin
+Boyle, Kentucky
+Manassas, Virginia
+Bexar, Texas
+Lincoln, Minnesota
+Antelope, Nebraska
+Clinton, Illinois
+Red River, Louisiana
+Jackson, Oklahoma
+Butts, Georgia
+Broadwater, Montana
+Antrim, Michigan
+Gosper, Nebraska
+Humboldt, Iowa
+Washington, Illinois
+Bastrop, Texas
+Hoke, North Carolina
+Pope, Minnesota
+Ritchie, West Virginia
+Somervell, Texas
+Ford, Kansas
+Todd, South Dakota
+Logan, Kentucky
+Searcy, Arkansas
+Mohave, Arizona
+Calhoun, Illinois
+Henderson, Kentucky
+San Jacinto, Texas
+Union, Pennsylvania
+West Carroll, Louisiana
+Prairie, Arkansas
+Hardee, Florida
+Maury, Tennessee
+Wrangell, Alaska
+Natrona, Wyoming
+Keweenaw, Michigan
+Ashley, Arkansas
+Howard, Maryland
+Ellis, Texas
+Clinton, Michigan
+Casey, Kentucky
+Hamilton, Florida
+Foard, Texas
+Weber, Utah
+Waseca, Minnesota
+Latah, Idaho
+Blaine, Idaho
+Lincoln, Idaho
+Cherokee, Alabama
+Tattnall, Georgia
+Crawford, Missouri
+Crane, Texas
+Rapides, Louisiana
+Pacific, Washington
+Washtenaw, Michigan
+Brown, Minnesota
+Sibley, Minnesota
+Barrow, Georgia
+Pulaski, Georgia
+Jackson, Louisiana
+Cook, Illinois
+Bamberg, South Carolina
+Comanche, Oklahoma
+Berrien, Georgia
+White, Arkansas
+Roger Mills, Oklahoma
+Jackson, Georgia
+Warren, New Jersey
+Pershing, Nevada
+Washington, Rhode Island
+Chester, South Carolina
+Bowman, North Dakota
+Oneida, New York
+DeWitt, Texas
+Alleghany, North Carolina
+Columbia, Florida
+Kanabec, Minnesota
+Lincoln, Wyoming
+Jones, South Dakota
+Nassau, New York
+Erie, Pennsylvania
+Bristol, Massachusetts
+Frio, Texas
+Humphreys, Mississippi
+Baker, Florida
+Campbell, Tennessee
+Meagher, Montana
+Flagler, Florida
+Davidson, Tennessee
+Fairfield, Ohio
+Randall, Texas
+Aroostook, Maine
+Lebanon, Pennsylvania
+Spalding, Georgia
+Macon, Illinois
+Kanawha, West Virginia
+Calhoun, Iowa
+Macomb, Michigan
+Perry, Pennsylvania
+Blaine, Nebraska
+Lincoln, Wisconsin
+Hitchcock, Nebraska
+Valley, Nebraska
+Anson, North Carolina
+Holmes, Mississippi
+Kittitas, Washington
+Johnston, North Carolina
+Noble, Ohio
+Newaygo, Michigan
+Scott, Tennessee
+Lawrence, Alabama
+La Plata, Colorado
+Fayette, Tennessee
+Pend Oreille, Washington
+Newberry, South Carolina
+Cooke, Texas
+Cameron, Pennsylvania
+Scott, Arkansas
+Mackinac, Michigan
+Osage, Oklahoma
+Aitkin, Minnesota
+Trimble, Kentucky
+Coles, Illinois
+Dallas, Texas
+Franklin City, Virginia
+Wirt, West Virginia
+St. Louis, Missouri
+Okanogan, Washington
+Tyrrell, North Carolina
+Mahaska, Iowa
+Calhoun, Georgia
+Chase, Nebraska
+St. Mary, Louisiana
+Botetourt, Virginia
+Simpson, Mississippi
+Allegany, Maryland
+Grant, Arkansas
+Sedgwick, Colorado
+Ashe, North Carolina
+Evangeline, Louisiana
+Appomattox, Virginia
+Lincoln, Louisiana
+Alexander, North Carolina
+Highland, Virginia
+Mifflin, Pennsylvania
+Harding, New Mexico
+Marshall, Tennessee
+Irion, Texas
+Independence, Arkansas
+Fisher, Texas
+Bannock, Idaho
+Delaware, Indiana
+Lincoln, South Dakota
+Crow Wing, Minnesota
+Sullivan, Tennessee
+Johnson, Missouri
+Elmore, Idaho
+Miami, Kansas
+Pasco, Florida
+Lampasas, Texas
+Jo Daviess, Illinois
+Kauai, Hawaii
+Grant, Indiana
+Grayson, Kentucky
+Hardin, Illinois
+Washington, Vermont
+Rooks, Kansas
+Pike, Georgia
+Wapello, Iowa
+Nowata, Oklahoma
+Pennington, South Dakota
+Shelby, Tennessee
+Choctaw, Mississippi
+Crawford, Arkansas
+Orleans, New York
+Morgan, West Virginia
+Richland, Ohio
+Warren, Pennsylvania
+Calhoun, Michigan
+Lauderdale, Tennessee
+Bosque, Texas
+Dickenson, Virginia
+Franklin, Maine
+Saluda, South Carolina
+Pleasants, West Virginia
+Grand, Utah
+Sullivan, New Hampshire
+Faulkner, Arkansas
+Clinton, Iowa
+Hardin, Tennessee
+Keokuk, Iowa
+Worth, Iowa
+Lake, Florida
+Philadelphia, Pennsylvania
+Johnson, Arkansas
+Macon, Alabama
+Kalawao, Hawaii
+Winn, Louisiana
+McKenzie, North Dakota
+Cleveland, North Carolina
+Dakota, Nebraska
+Randolph, Missouri
+Norton, Kansas
+Wood, West Virginia
+Greenwood, South Carolina
+Butte, Idaho
+Kleberg, Texas
+Grant, Oklahoma
+Sacramento, California
+Colleton, South Carolina
+Fond du Lac, Wisconsin
+Webster, Iowa
+Frederick, Virginia
+Santa Fe, New Mexico
+Decatur, Indiana
+Valdez-Cordova, Alaska
+St. Joseph, Michigan
+Guilford, North Carolina
+Blair, Pennsylvania
+Cortland, New York
+Daggett, Utah
+Magoffin, Kentucky
+Smith, Kansas
+Marion, Illinois
+Fleming, Kentucky
+Ouachita, Louisiana
+Van Buren, Iowa
+Hendricks, Indiana
+Kern, California
+Deuel, South Dakota
+Leavenworth, Kansas
+Adair, Missouri
+Rio Blanco, Colorado
+Miner, South Dakota
+Greene, Georgia
+Galveston, Texas
+Cascade, Montana
+Clarke, Iowa
+Redwood, Minnesota
+Waukesha, Wisconsin
+Butler, Ohio
+Pike, Pennsylvania
+Fairfax City, Virginia
+Wheeler, Oregon
+El Paso, Texas
+Uintah, Utah
+Adair, Iowa
+Union, Illinois
+Kings, California
+Jefferson, Tennessee
+Banner, Nebraska
+Chester, Tennessee
+Major, Oklahoma
+Wheeler, Georgia
+Liberty, Georgia
+Yell, Arkansas
+Lewis, Kentucky
+Camp, Texas
+Columbiana, Ohio
+Callaway, Missouri
+Throckmorton, Texas
+Upson, Georgia
+Butler, Kansas
+Le Sueur, Minnesota
+Newton, Georgia
+Washington, Alabama
+Cass, Iowa
+Day, South Dakota
+Sharkey, Mississippi
+Sac, Iowa
+Wyandot, Ohio
+Lawrence, Mississippi
+Niobrara, Wyoming
+Henry, Indiana
+Stanley, South Dakota
+Madison, Missouri
+New London, Connecticut
+Wake, North Carolina
+Silver Bow, Montana
+Kendall, Texas
+Lorain, Ohio
+Shelby, Indiana
+Marshall, Mississippi
+Jackson, West Virginia
+Adams, Wisconsin
+Finney, Kansas
+Houston, Alabama
+Franklin, Iowa
+Surry, North Carolina
+Sullivan, Missouri
+Iowa, Iowa
+Charles, Maryland
+Noble, Oklahoma
+Simpson, Kentucky
+Huron, Ohio
+Union, South Dakota
+Transylvania, North Carolina
+Platte, Missouri
+Todd, Kentucky
+Ray, Missouri
+Union, Tennessee
+Bartow, Georgia
+Cumberland, Kentucky
+Monroe, Indiana
+Leon, Florida
+Person, North Carolina
+Pecos, Texas
+Nodaway, Missouri
+Seneca, New York
+Miami, Ohio
+Wexford, Michigan
+Harlan, Kentucky
+Custer, Nebraska
+Erie, Ohio
+Sandoval, New Mexico
+Baca, Colorado
+Turner, Georgia
+Dooly, Georgia
+Garrett, Maryland
+Deschutes, Oregon
+Paulding, Georgia
+San Saba, Texas
+Midland, Michigan
+White, Indiana
+Menard, Texas
+Windham, Connecticut
+Washington, Mississippi
+Essex, Massachusetts
+Arapahoe, Colorado
+Clay, Minnesota
+Yakima, Washington
+Woodward, Oklahoma
+Wasatch, Utah
+Palm Beach, Florida
+Winneshiek, Iowa
+Benewah, Idaho
+Lander, Nevada
+Decatur, Georgia
+Dewey, Oklahoma
+Woods, Oklahoma
+Putnam, West Virginia
+Coosa, Alabama
+Kodiak Island, Alaska
+Lancaster, Nebraska
+Brown, South Dakota
+Le Flore, Oklahoma
+Harrison, Missouri
+Harrisonburg, Virginia
+Concho, Texas
+Union, Louisiana
+Brazoria, Texas
+Guernsey, Ohio
+Fulton, Indiana
+McCook, South Dakota
+Gonzales, Texas
+Clear Creek, Colorado
+Door, Wisconsin
+Allen, Louisiana
+Teton, Montana
+Kay, Oklahoma
+Josephine, Oregon
+Ascension, Louisiana
+Doniphan, Kansas
+Fountain, Indiana
+Beauregard, Louisiana
+Gilmer, Georgia
+Wood, Ohio
+Boyd, Nebraska
+Monroe, Missouri
+Steele, North Dakota
+Houston, Texas
+Sequatchie, Tennessee
+Houston, Georgia
+Conejos, Colorado
+Curry, Oregon
+LaGrange, Indiana
+Scott, Illinois
+Scott, Kansas
+Muhlenberg, Kentucky
+Martin, North Carolina
+Ector, Texas
+Clark, South Dakota
+Bristol Bay plus Lake and Peninsula, Alaska
+Brooks, Georgia
+El Dorado, California
+Pulaski, Indiana
+Stafford, Kansas
+Mason, Illinois
+Logan, Oklahoma
+Sussex, New Jersey
+Otero, Colorado
+Huerfano, Colorado
+Randolph, Georgia
+Jefferson, Kentucky
+Kane, Illinois
+Price, Wisconsin
+Lee, Virginia
+Perry, Alabama
+Gibson, Tennessee
+Kearney, Nebraska
+Union, Kentucky
+McMinn, Tennessee
+McIntosh, North Dakota
+Middlesex, Virginia
+Walton, Georgia
+Kaufman, Texas
+Bullock, Alabama
+Loup, Nebraska
+Clay, Alabama
+Cedar, Iowa
+Lynchburg, Virginia
+Lyon, Kentucky
+Harris, Texas
+Clark, Arkansas
+Oneida, Idaho
+Hancock, Iowa
+Lake, Montana
+Elliott, Kentucky
+Polk, North Carolina
+Putnam, New York
+Greene, North Carolina
+Hansford, Texas
+Cumberland, North Carolina
+Summit, Ohio
+Elk, Pennsylvania
+Madison, Illinois
+St. Clair, Missouri
+Craighead, Arkansas
+Lemhi, Idaho
+Lee, Kentucky
+Neshoba, Mississippi
+Pope, Arkansas
+Gray, Kansas
+Douglas, Washington
+Summers, West Virginia
+Brown, Texas
+Swain, North Carolina
+De Soto, Louisiana
+Knox, Indiana
+Jefferson, Texas
+Mesa, Colorado
+Taylor, West Virginia
+Erie, New York
+Washburn, Wisconsin
+Fall River, South Dakota
+McClain, Oklahoma
+Rusk, Wisconsin
+Lincoln, Nevada
+Warren, Iowa
+Beadle, South Dakota
+Hutchinson, Texas
+Kiowa, Colorado
+Adams, Idaho
+Crawford, Georgia
+Williamsburg, South Carolina
+Eau Claire, Wisconsin
+Franklin, Mississippi
+Franklin, Indiana
+Coos, Oregon
+Eureka, Nevada
+Los Alamos, New Mexico

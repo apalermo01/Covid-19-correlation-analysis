@@ -23,7 +23,7 @@ class CovidDataClass:
 	processing for the covid-19 datasets"""
 
 	def __init__(self, path=cfg.DATASET_DIR, load_local=False,
-		load_clean=False):
+		load_clean=False, min_samples=10):
 		"""Initialize class by loading and cleaning dataset
 		Params
 		----------
@@ -40,6 +40,8 @@ class CovidDataClass:
 					"{}case_data_clean.csv".format(self.path), index_col=0)
 				self.policies = pd.read_csv(
 					"{}policy_data_clean.csv".format(self.path), index_col=0)
+				self.data.loc[:, 'date'] = pd.to_datetime(self.data.loc[:, 'date'], format='%Y-%m-%d')
+				self.policies.loc[:, 'date'] = pd.to_datetime(self.policies.loc[:, 'date'], format='%Y-%m-%d')
 			else:
 				self.data = pd.read_csv(
 					"{}case_data_orig.csv".format(self.path), index_col=0)
@@ -68,7 +70,13 @@ class CovidDataClass:
 			self.policies.to_csv("{}policy_data_orig.csv".format(self.path))
 			self._clean_data()
 
+		# get list of counties in train set
+		self.train_counties = np.loadtxt(cfg.ROOT_DIR + "train_locs.txt", delimiter=";", dtype="object")
 
+		# get list of counties in test set (for final evaluation only)
+		self.test_counties = np.loadtxt(cfg.ROOT_DIR + "test_locs.txt", delimiter=";", dtype="object")
+
+		self.prepped_policy_data = self.prep_policy_data(min_samples=min_samples)
 		# Convert date fields to datetime
 		# try:
 		# 	#self.data['date'] = pd.to_datetime(self.data['date'], format='%Y-%m-%d')
@@ -707,7 +715,7 @@ class CovidDataClass:
 	### PREPROCESSING FOR ML MODELS
 	def prep_policy_data(self,
 						#policy_dict=policy_dict,
-						min_samples=10):
+						min_samples=10,):
 		"""Preprocess the policy data for Machine Learning models.
 
 		Parameters
@@ -755,7 +763,11 @@ class CovidDataClass:
 					policy_df,
 					output=True,
 					bins_list=[(0, 6), (7, 13), (14, 999)],
-					state_output=False):
+					state_output=False,
+					save_csv=True,
+					load_csv=True,
+					cutoff_date=pd.to_datetime("2020-12-31"),
+					filter_counties=None):
 		"""Data preprocessing for Machine Learning that joins case and policy data.
 
 		This function works by generating a processed DataFrame for each state and
@@ -782,7 +794,11 @@ class CovidDataClass:
 			Processed DataFrame
 		"""
 		time_start = time.time()
-
+		filename = cfg.DATASET_DIR + f"prepped_data_{str(bins_list)}.csv"
+		if load_csv and os.path.exists(filename):
+			df3 = pd.read_csv(filename, header=[0, 1], index_col=[0])
+			print("loaded data from csv")
+			return df3
 		# Define a sub-function to convert passed integers to the desired
 		# date range starting from a given date.
 		def _get_date_range(date, start_move=0, stop_move=7):
@@ -792,8 +808,16 @@ class CovidDataClass:
 								end=date+timedelta(days=stop_move))
 
 		# Ensure all date columns are datetime
-		case_df['date'] = pd.to_datetime(case_df['date'], format='%Y-%m-%d')
-		policy_df['date'] = pd.to_datetime(policy_df['date'], format='%Y-%m-%d')
+		case_df.loc[:, 'date'] = pd.to_datetime(case_df.loc[:, 'date'], format='%Y-%m-%d')
+		policy_df.loc[:, 'date'] = pd.to_datetime(policy_df.loc[:, 'date'], format='%Y-%m-%d')
+
+		# filter dates after the cutoff
+		case_df = case_df[case_df['date'] < cutoff_date]
+		policy_df = policy_df[policy_df['date'] < cutoff_date]
+
+		# filter to specific counties
+		if filter_counties is not None:
+			case_df = case_df[case_df['full_loc_name'].isin(filter_counties)]
 
 		# Make list of all policies.
 		all_policies = policy_df['full_policy'].unique()
@@ -874,8 +898,222 @@ class CovidDataClass:
 		df3.fillna(0, inplace=True)
 		time_end = time.time()
 
+		if save_csv:
+			df3.to_csv(filename)
+			print("csv saved")
 		if output:
 			print("data shaped\nbins: {}\ntime elapsed: {}".format(
 				bins_list, (time_end - time_start)))
 
 		return df3
+
+	def county_split(self, df, test_size):
+		"""
+		
+		"""
+		
+		all_counties = df['full_loc_name'].unique()
+
+		# shuffle the list
+		np.random.shuffle(all_counties)
+
+		# split the data
+		counties_test = all_counties[: int(len(all_counties)*test_size)]
+		counties_train = all_counties[int(len(all_counties)*test_size) :]
+
+		df_test = df[df['full_loc_name'].isin(counties_test)]
+		df_train = df[df['full_loc_name'].isin(counties_train)]
+		
+		return df_test, df_train
+
+	# Run models
+
+	def train_model(self,
+					df_train_proc,
+					model_in,
+					metrics_dict,
+					K=10,
+					verbose=True,
+					save_output=False,
+					filename="log.txt"):
+
+		"""Function to train models using K-fold cross validation
+		Parameters
+		-----------
+		df_train_proc: DataFrame
+			processed dataframe (after selecting bins and joining with cases)
+		model_in: call to an sklearn object
+			call to the models constructor method
+		K: integer
+			number of cross-validation folds
+		verbose: Boolean
+			detailed outputs
+		
+		"""
+
+		results_dict = {metric: [] for metric in metrics_dict.keys()}
+
+		# get a list of all unique counties
+		counties = df_train_proc[('info', 'full_loc')].unique()
+
+		# shuffle the counties
+		np.random.shuffle(counties)
+		
+		# declare batch size
+		batch_size = int(len(counties) / K)
+		
+		# logging
+		msg1 = f"number of cross-validation folds: {K}"
+		msg2 = f"num counties in validation set: {batch_size}"
+		
+		if verbose: 
+			print(msg1)
+			print(msg2)
+		if save_output: 
+			with open(filename, "a") as log: 
+				log.write(msg1)
+				log.write(msg2)
+
+		# loop through cross validation folds
+		for k in range(K): 
+		
+			# select the train and validation portion
+			df_train = df_train_proc[~df_train_proc[
+				('info', 'full_loc')].isin(counties[k*batch_size:(k+1)*batch_size])]
+
+			df_validate = df_train_proc[df_train_proc[
+				('info', 'full_loc')].isin(counties[k*batch_size:(k+1)*batch_size])]
+
+			# Implement and train the model
+			X_train = df_train.loc[:, df_train.columns[5:]].values
+			y_train = df_train.loc[:, ('info', 'new_cases_1e6')].values 
+
+			X_validate = df_validate.loc[:, df_validate.columns[5:]].values
+			y_validate = df_validate.loc[:, ('info', 'new_cases_1e6')].values
+
+			model = model_in
+			model.fit(X_train, y_train)
+
+			# compute scores
+			for metric in metrics_dict.keys():
+				score = metrics_dict[metric](y_validate, model.predict(X_validate))
+				results_dict[metric].append(score)
+			
+			results = [(str(metric) + ": " + str(results_dict[metric][k])) for metric in metrics_dict.keys()]
+			
+			msg = f"fold: {k}, scores: {results}"
+			if verbose: 
+				print(msg)
+			if save_output: 
+				with open(filename, "a") as log: 
+					log.write(msg)
+
+		return results_dict, model.get_params()
+	
+	def loop_models(self,
+					df_train_proc,
+					models_dict,
+					metrics_dict,
+					bin_id,
+					K=10,
+					verbose=True,
+					save_output=False,
+					filename="log.txt",):
+	
+		# Declare empty dict to hold all results
+		results = {}
+		
+		# loop through all models passed
+		for model in models_dict.keys():
+			msg = f"running model: {model}"
+			
+			if verbose:
+				print(msg)
+			if save_output:
+				with open(filename, "a") as log:
+					log.write(msg)
+				
+			# declare emtpy dictionary for results for a single run
+			model_results = {}
+			scores, params = self.train_model(df_train_proc=df_train_proc,
+											model_in=models_dict[model],
+											metrics_dict=metrics_dict,
+											K=K,
+											verbose=verbose,
+											save_output=save_output,
+											filename=filename,)
+
+			# save the results in a dictionary
+			model_results['params'] = params
+			model_results['scores'] = scores
+			
+			results[model] = model_results
+
+		return results
+
+	def run_batch(self,
+				bins_dict,
+				models_dict,
+				metrics_dict,
+				case_data=None,
+				policies=None,
+				K=10,
+				verbose=True,
+				save_output=False,
+				filename=None,
+				overwrite=True,
+				output_json=False,
+				json_file=None,):
+		results = {}
+		
+		if case_data is None:
+			case_data = self.data
+		if policies is None:
+			policies = self.prepped_policy_data
+		if overwrite & os.path.exists(filename):
+			os.remove(filename)
+
+		for i, key in enumerate(bins_dict):
+			bins_list = bins_dict[key]
+			
+			msg = f"bins: {bins_list}"
+			if verbose:
+				print(msg)
+			if save_output:
+				with open(filename, "a") as log:
+					log.write(msg)
+			try:
+				df_train_proc = self.join_policies(case_df=case_data,
+											policy_df=policies,
+											output=True,
+											bins_list=bins_list,
+											state_output=False,
+											save_csv=True,
+											load_csv=True,
+											cutoff_date=pd.to_datetime("2020-12-31"),
+											filter_counties=self.train_counties,
+											)
+				
+				models_results = self.loop_models(df_train_proc=df_train_proc,
+											models_dict=models_dict,
+											metrics_dict=metrics_dict,
+											K=K,
+											bin_id=str(bins_list),
+											verbose=verbose,
+											save_output=save_output,
+											filename=filename)
+			except Exception as e:
+				print("EXCEPTION THROWN: ", e)
+				continue
+			models_results['bins'] = bins_list
+			results[key] = models_results
+
+			if output_json:
+				if overwrite & os.path.exists(json_file):
+					os.remove(json_file)
+					
+				with open(json_file, 'w') as file:
+					print("saving json")
+					json.dump(results, file, sort_keys=True, indent=4)
+				
+		return results
