@@ -4,3 +4,4 @@ test notebook.ipynb
 *.twbx
 *.twbr
 Covid-19 data analysis from main.ipynb
+data/*
