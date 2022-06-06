@@ -9,6 +9,8 @@ from sodapy import Socrata
 from tqdm import tqdm
 import numpy as np
 from datetime import timedelta
+import us
+import re
 ##################################################################################
 ### DATA INGESTION ###############################################################
 ##################################################################################
@@ -268,9 +270,88 @@ def clean_covid_data(
     return df
 
 def clean_policy_data(
-    df,
+    df = None,
+    cleaned_timeseries_path = "./data/covid_timeseries_cleaned.csv",
+    path = "./data/covid_policies.csv",
+    clean_path = "./data/covid_policies_cleaned.csv",
+    force_reload = False,
+    force_reclean = False,
 ):
     """
     Pipeline for cleaning covid policy data
     :param df: dataframe of raw uncleaned data
     """
+    
+    # get covid policy data
+    if df is None:
+        if os.path.exists(clean_path) and not force_reclean:
+            df = pd.read_csv(clean_path, index_col=0)
+            return df
+        
+        df = get_policy_data(path, force_reload)
+
+    # get covid timeseries data
+    timeseries_df = clean_covid_data(
+        df=None,
+        clean_path = cleaned_timeseries_path
+    )
+
+    # clean up state names
+    abbr = [elem.abbr for elem in us.states.STATES]
+    df = df.drop(df[~df['state_id'].isin(abbr)].index)
+    df.replace(to_replace=us.states.mapping('abbr', 'name'), inplace=True)
+    df.rename(columns={'state_id': 'state'}, inplace=True)
+
+    # convert nulls in count to 'statewide'
+    df.fillna(value={'county': 'statewide'}, inplace=True)
+
+    # address mismatches
+    county_match = re.compile(" county$")
+    munici_match = re.compile(" municipality$")
+    city_match = re.compile(" city$")
+    Borough_match = re.compile(" borough$")
+
+    df['county'].replace(to_replace=county_match, value='', inplace=True)
+    df['county'].replace(to_replace=munici_match, value='', inplace=True)
+    df['county'].replace(to_replace=city_match, value='', inplace=True)
+    df['county'].replace(to_replace=Borough_match, value='', inplace=True)
+
+    locs = timeseries_df['county'].unique()
+    mismatches = [county for county in df['county'][df['county']!='statewide'].unique() 
+              if county not in locs]
+    assert len(mismatches) == 0, f"[ERROR] found mismatches between timeseries and policy dataset: {mismatches}"
+
+    # fips code
+    for index, data in df.iterrows(): 
+        if data.policy_level == 'state':
+            df.loc[index, 'fips_code'] = np.int64(us.states.lookup(data.state).fips)
+    df['fips_code'] = df['fips_code'].astype(np.int64)
+
+    # fix typos in date
+    bad_mask = df['date'].str.contains('0020')
+    df.loc[bad_mask, 'date'] = ['2020' + elem[4:] for elem in df.loc[bad_mask, 'date'].values]
+    df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
+    df = df.drop(df[(df['date']<min(timeseries_df['date'])) | (df['date']>max(timeseries_df['date']))].index)
+
+    # handle policy names
+    policy_replacements_dict = {
+        'Stop Initiation Of Evictions Overall Or Due To Covid Related Issues': 'Stop Initiation Of Evictions',
+        'Modify Medicaid Requirements With 1135 Waivers Date Of CMS Approval': 'Modify Medicaid Requirements', 
+        'Stop Enforcement Of Evictions Overall Or Due To Covid Related Issues': 'Stop Enforcement Of Evictions', 
+        'Mandate Face Mask Use By All Individuals In Public Facing Businesses':  'Mandate Face Masks In Businesses', 
+        'Mandate Face Mask Use By All Individuals In Public Spaces': 'Mandate Face Masks In Public Spaces', 
+        'Reopened ACA Enrollment Using a Special Enrollment Period': 'ACA Special Enrollment Period', 
+        'Suspended Elective Medical Dental Procedures': 'Suspend Elective Dental Procedures', 
+        'Allow Expand Medicaid Telehealth Coverage': 'Expand Medicaid Telehealth Coverage', 
+        'Renter Grace Period Or Use Of Security Deposit To Pay Rent': 'Grace Period / Security Deposit for Rent'
+    }
+
+    for key in policy_replacements_dict.keys():
+        df['policy_type'].replace(to_replace=key, value=policy_replacements_dict[key], inplace=True)
+
+    df['policy_type'] = df['policy_type'].str.lower()
+    policies_drop = ["phase 1", "phase 2", "phase 3", "phase 4", "phase 5", "new phase"]
+    df = df.drop(df[df['policy_type'].isin(policies_drop)].index)
+
+    # save
+    df.to_csv(clean_path)
