@@ -289,7 +289,9 @@ def clean_policy_data(
             return df
         
         df = get_policy_data(path, force_reload)
-
+    
+    # remove irrelevant columns
+    df = df.drop(['geocoded_state', 'comments', 'source', 'total_phases'], axis=1)
     # get covid timeseries data
     timeseries_df = clean_covid_data(
         df=None,
@@ -302,8 +304,12 @@ def clean_policy_data(
     df.replace(to_replace=us.states.mapping('abbr', 'name'), inplace=True)
     df.rename(columns={'state_id': 'state'}, inplace=True)
 
+    ### county
     # convert nulls in count to 'statewide'
     df.fillna(value={'county': 'statewide'}, inplace=True)
+    
+    # convert to lowercase
+    df['county'] = df['county'].str.lower()
 
     # address mismatches
     county_match = re.compile(" county$")
@@ -355,3 +361,5 @@ def clean_policy_data(
 
     # save
     df.to_csv(clean_path)
+
+    return df
