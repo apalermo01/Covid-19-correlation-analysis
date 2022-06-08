@@ -258,7 +258,7 @@ def plot_cases_and_policies(
     fig, ax, df = plot_cases(level="county", county=county, state=state);
 
     # Get the policy data for the selected state and county.
-    policy_data = get_policy_data(state, county);
+    policy_data = get_policies(state, county);
 
     # Set a solid line to be the start of a policy and a dashed line to be the end.
     styles_start_stop = {
