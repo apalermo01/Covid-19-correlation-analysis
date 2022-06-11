@@ -12,8 +12,8 @@ from datetime import timedelta
 from datetime import datetime
 import us
 import re
-# from tqdm import tqdm
-from tqdm.notebook import tqdm
+from tqdm import tqdm
+#from tqdm.notebook import tqdm
 
 ##################################################################################
 ### DATA INGESTION ###############################################################
@@ -172,6 +172,7 @@ def clean_covid_data(
     if df is None:
         if os.path.exists(clean_path) and not force_reclean:
             df = pd.read_csv(clean_path, index_col=0)
+            df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')  
             return df
 
         df = load_covid_data(path, force_reload)
@@ -290,6 +291,7 @@ def clean_policy_data(
     if df is None:
         if os.path.exists(clean_path) and not force_reclean:
             df = pd.read_csv(clean_path, index_col=0)
+            df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
             return df
         
         df = load_policy_data(path, force_reload)
@@ -709,3 +711,143 @@ def calc_delta_stats(deltas, measure_period=14, min_samples=10):
     delta_stats.drop(delta_stats[delta_stats['num_samples'] <= min_samples].index, inplace=True)
     
     return delta_stats
+
+
+def prep_policy_data(policy_data,
+                     policy_dict,
+                     min_samples=3):
+    """Small funciton to process policy data
+    df2: DataFrame with the policy data
+    policy_dict: dictionary to rename / aggregate policy types
+    min_samples: throw out policies that were not implemented many times
+    """
+    
+    proc_policy_data = policy_data.copy()
+    
+    # Replace policies with the ones in policy_dict(). 
+    for key in policy_dict.keys():
+        proc_policy_data['policy_type'].replace(to_replace=key, value=policy_dict[key], inplace=True)
+        
+    # Define a new field that includes policy_type, start_stop, and policy_level information
+    proc_policy_data.loc[:, 'full_policy'] = proc_policy_data['policy_type'] + " - " +\
+                                        proc_policy_data['start_stop'] + " - " +\
+                                        proc_policy_data['policy_level']
+    
+    # Get number of times each policy was implemented.
+    num_samples = proc_policy_data['full_policy'].value_counts()
+    
+    # drop the policy if it was implemented fewer than min_policy times. 
+    proc_policy_data = proc_policy_data.drop(proc_policy_data[
+        proc_policy_data['full_policy'].isin(num_samples[num_samples.values < min_samples].index)
+    ].index)
+    
+    # return the DataFrame
+    return proc_policy_data
+
+def prepare_new_df(case_data):
+    """Initialize the new dataframe"""
+
+    tuples_info = [('info', 'location_type'),
+               ("info", "state"),
+               ("info", "county"),
+               ("info", "date"),
+               ("info", "new_cases_1e6")]
+    info_cols = pd.MultiIndex.from_tuples(tuples_info)
+    new_df = pd.DataFrame(columns = info_cols)
+    new_df[[('info', 'location_type'),
+            ('info', 'state'),
+            ('info', 'county'),
+            ('info', 'date'),
+            ('info', 'new_cases_1e6')]] = case_data[['location_type',
+                                                      'state',
+                                                      'county',
+                                                      'date',
+                                                      'new_cases_1e6']]
+    
+    return new_df
+
+def prepare_data(case_data,
+                 policy_data_prepped,
+                 policy_name,
+                 bins_list,
+                 save_path = "./data/single_policy_bins/",
+                 save_data = True,
+                 force_rerun = False,
+                 pbar = True,
+                 new_df = None):
+
+    def get_date_range(date, start_move=0, stop_move=7): 
+        """Get the date range from date+start_move to date+stop_move"""
+
+        return pd.date_range(start=date+timedelta(days=start_move), 
+                             end=date+timedelta(days=stop_move))
+    
+    ### reload the dataframe from file if applicable
+    filename = policy_name.replace(" - ", "_") +\
+                "-bins=" + ''.join([str(b[0])+"-"+str(b[1])+"_" for b in bins_list])[:-1] + ".csv"
+    
+    if not force_rerun and os.path.exists(save_path + filename):
+        new_df = pd.read_csv(save_path + filename, index_col=0, header=[0, 1])
+        new_df[('info', 'date')] = pd.to_datetime(new_df[('info', 'date')], format='%Y-%m-%d')
+        return new_df
+    
+    ### initialize the new dataframe
+    if new_df is None:
+        new_df = prepare_new_df(case_data)
+
+    tuples_policies = [ (policy_name, (str(date_range[0]) + "-" + str(date_range[1])))
+                           for date_range in bins_list]    
+    cols_polices = pd.MultiIndex.from_tuples(tuples_policies)
+    policies_df = pd.DataFrame(columns=cols_polices)
+    new_df = pd.concat([new_df, policies_df])
+    new_df = new_df.fillna(0)
+    policy_data_filtered = policy_data_prepped[policy_data_prepped['full_policy']==policy_name]
+
+    # generate dataframe
+    df_dict = policy_data_filtered.to_dict('records')
+    for row in tqdm(df_dict, disable=not pbar):
+        for date_bin in bins_list:
+            date_range = get_date_range(row['date'], date_bin[0], date_bin[1])
+
+            # Generate label (this is the 2nd level label in the multiIndexed column)
+            label = (str(date_bin[0]) + "-" + str(date_bin[1]))
+            new_df.loc[(new_df[('info', 'date')].isin(date_range)) &\
+                       ((new_df[('info', 'county')] == row['county']) | (row['policy_level'] == 'state')) &\
+                       (new_df[('info', 'state')] == row['state']), (policy_name, label)] = 1
+
+    if save_data:
+        if not os.path.exists(save_path):
+            os.makedirs(save_path)
+        new_df.to_csv(save_path+filename)
+    return new_df
+
+def generate_dataset_group(bins_list,
+                           policy_dict,
+                           min_samples=3):
+    """Generate datasets for every policy for a given group of bins
+    Parameters
+    ----------
+    bins_list
+    
+    policy_dict
+    """
+
+    case_data = clean_covid_data()
+    policy_data = clean_policy_data()
+    
+    policy_data_prepped = prep_policy_data(policy_data=policy_data,
+                                           policy_dict=policy_dict,
+                                           min_samples=min_samples)
+    
+    all_policies = policy_data_prepped['full_policy'].unique()
+    new_df = prepare_new_df(case_data)
+
+    for policy in tqdm(all_policies, desc='generating datasets for policies'):
+        prepare_data(
+            case_data=case_data,
+            policy_data_prepped = policy_data_prepped,
+            policy_name = policy,
+            bins_list = bins_list,
+            pbar = False,
+            new_df=new_df
+        )
