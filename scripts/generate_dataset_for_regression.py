@@ -1,6 +1,6 @@
 from covid_project.data_utils import generate_dataset_group
 
-bins_list = [(0, 7), (8, 14), (15, 28), (29, 60), (61, 999)]
+
 
 policy_dict = {
     'aca special enrollment period' : 'medical', 
@@ -60,4 +60,10 @@ policy_dict = {
     'wholesale trade' : 'wholesale trade',
 }
 if __name__ == '__main__':
+    all_bins = [
+        [(0, 14), (15, 999)],
+        [(0, 14), (15, 28), (29, 999)],
+        [(0, 7), (8, 14), (15, 999)],
+        [(0, 7), (8, 14), (15, 28), (29, 60), (61, 999)]
+    ]
     generate_dataset_group(bins_list, policy_dict, min_samples=3)
