@@ -16,11 +16,11 @@ from tqdm import tqdm
 #from tqdm.notebook import tqdm
 
 ##################################################################################
-### DATA INGESTION ###############################################################
+### DATA INGESTION / RETRIEVAL ###################################################
 ##################################################################################
 def load_covid_data(path = "./data/covid_timeseries.csv",
                    force_reload = False):
-    """Ingest covid data, pulling it from file or downloading it from the source
+    """Loads raw covid data, pulling it from file or downloading it from the source
     
     Parameters
     ----------
@@ -70,10 +70,43 @@ def load_policy_data(path = "./data/covid_policies.csv",
         df.to_csv(path)
     return df
 
+def get_processed_data(policy_name,
+                    bins_list,
+                    root_path="./data/single_policy_bins/",):
+    """           
+    Parameters
+    ----------
+    policy_name
+
+    bins_list
+
+    root_path
+
+    """
+
+    ### TODO: add option to generate processed data if the file is not present
+    filename = policy_name.replace(" - ", "_") +\
+                "-bins=" + ''.join([str(b[0])+"-"+str(b[1])+"_" for b in bins_list])[:-1] + ".csv"
+    path = root_path + filename
+
+    if os.path.exists(path):
+        data = pd.read_csv(root_path + filename, header=[0, 1], index_col=0)
+        return True, data
+    else:
+        return False, None
+
+def get_all_policies(policy_dict,
+    min_samples):
+    policy_data = clean_policy_data()
+    policy_data_prepped = prep_policy_data(policy_data=policy_data,
+                                           policy_dict=policy_dict,
+                                           min_samples=min_samples)
+    all_policies = policy_data_prepped['full_policy'].unique()
+    return all_policies
 
 
 ##################################################################################
-### DATA EXPLORATION ################################################################
+### DATA EXPLORATION #############################################################
 ##################################################################################
 def eval_df(df,
             print_result = True,
@@ -499,6 +532,23 @@ def generate_state_case_dict(case_df,
                              save_data=False,
                              load_from_file=False,
                              path="./data/state_data/"):
+    """Generate a dictionary of dataframes with statewide case data for every state
+
+    Parameters
+    ----------
+    case_df
+
+    save_data
+
+    load_from_file
+
+    path
+
+    Returns
+    --------
+    dictionary
+    """
+
     state_cases_dict = dict()
     for state in tqdm([elem.name for elem in us.states.STATES]): 
         state_save_path = path+str(state)+".csv"
@@ -567,10 +617,6 @@ def calculate_deltas(case_df,
         """Wrap repeated calculations in a sub function to avoid repetition."""
         day_1 = timedelta(days=1)
         ser.index = pd.to_datetime(ser.index, format="%Y-%m-%d")
-        # for i in ser.index:
-        #     print(type(i))
-        # print("date = ", type(date))
-        # ser.index = datetime.strptime(ser.index, "%Y-%m-%d")
     
         start      = ser[ser.index==date].values[0]
         start_1day = ser[ser.index==date+day_1].values[0]
@@ -601,6 +647,7 @@ def calculate_deltas(case_df,
     
     for index, data in tqdm(policy_df.iterrows()): 
         data['date'] = datetime.strptime(data['date'], "%Y-%m-%d")
+
         # If this is a state-level policy, then we already have the DataFrame to use. 
         if data.policy_level == 'state': 
             state_df = state_cases_dict[data.state]
@@ -712,7 +759,9 @@ def calc_delta_stats(deltas, measure_period=14, min_samples=10):
     
     return delta_stats
 
-
+##################################################################################
+### DATA PROCESSING FOR REGRESSION ###############################################
+##################################################################################
 def prep_policy_data(policy_data,
                      policy_dict,
                      min_samples=3):
