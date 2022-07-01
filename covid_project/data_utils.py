@@ -829,6 +829,33 @@ def prepare_data(case_data,
                  force_rerun = False,
                  pbar = True,
                  new_df = None):
+    """
+    Generate a data prepped for regression analysis
+
+    Parameters
+    ----------
+    case_data
+
+    policy_data_prepped
+
+    policy_name
+
+    bins_list
+
+    save_path
+
+    save_data
+
+    force_rerun
+
+    pbar
+
+    new_df
+
+    Returns
+    --------
+    pandas dataframe
+    """
 
     def get_date_range(date, start_move=0, stop_move=7): 
         """Get the date range from date+start_move to date+stop_move"""
@@ -884,6 +911,8 @@ def generate_dataset_group(bins_list,
     bins_list
     
     policy_dict
+
+    min_samples
     """
 
     case_data = clean_covid_data()
