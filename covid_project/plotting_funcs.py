@@ -1,3 +1,9 @@
+"""
+Collection of general plotting functions
+
+Note that plotting functions related to the regression analysis is located in regression_funcs.py
+"""
+
 import matplotlib.pyplot as plt 
 import matplotlib.dates as mdates
 from matplotlib.lines import Line2D
