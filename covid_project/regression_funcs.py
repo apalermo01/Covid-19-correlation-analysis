@@ -108,7 +108,9 @@ def collect_all_regression_results_to_df(regression_results_path):
 def plot_rsquared_heatmap(data,
                           dep_var,
                           sort_values = True,
-                          ax = None):
+                          ax = None,
+                          save = False,
+                          filename = "./figures/rsquared_heatmap.png"):
     """Plots a heatmap of r-squared values for the given dependent variable. Generates a column
     for each set of bins and a row for each policy, where the color is the r-squared value.
     
@@ -170,4 +172,8 @@ def plot_rsquared_heatmap(data,
 
     ax = sns.heatmap(data, ax=ax)
     ax.set_title(f"r-squared results for " + dep_var)
+
+    if save_figure:
+        plt.savefig(filename)
+
     return ax, bins_ids

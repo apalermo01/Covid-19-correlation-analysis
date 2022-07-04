@@ -12,8 +12,8 @@ from datetime import timedelta
 from datetime import datetime
 import us
 import re
-from tqdm import tqdm
-#from tqdm.notebook import tqdm
+#from tqdm import tqdm
+from tqdm.notebook import tqdm
 
 ##################################################################################
 ### DATA INGESTION / RETRIEVAL ###################################################
@@ -576,23 +576,34 @@ def calculate_deltas(case_df,
                      state_data_path="./data/state_data/",
                      results_path="./data/deltas/",
                      force_run=False,
-                     save_results=True): 
+                     save_results=True,
+                     disable_pbar=False): 
     """For every policy implementation at the state and county level, calculate the change in case and death numbers. 
     
     Parameters
     ---------- 
+    case_df : pandas DataFrame
+        output of clean_case_data()
+    policy_df : pandas DataFrame
+        output of clean_policy_data()
     measure_period : int
         time to wait (in days) before measuring a change in new case or death numbers (14 by default)
     filtered_policies : array-like 
         specify policies to select (defaul: None- calulate deltas for all policies)
-    case_df : pandas DataFrame
-        DataFrame with case / death information (default: df)
-    policy_df : pandas DataFrame
-        DataFrame with police information (default: df2)
+    state_cases_dict : 
+    save_state_data :
+    load_state_data_from_file :
+    state_data_path :
+    results_path :
+    force_run :
+    save_results :
+    disable_pbar : boolean
+        If true, suppresses progress bar
+
     
     Returns
     ----------  
-    A copy of the covid policies df (df2) with 2 appended columns for the change in case and death numbers. 
+    A copy of the covid policies df with 2 appended columns for the change in case and death numbers. 
     """
     
     # Load all state-aggregated datasets into a dictionary. We expect to need all 50 states so let's take the time to aggregate
@@ -645,7 +656,7 @@ def calculate_deltas(case_df,
     case_df = case_df.set_index('date')
     total_policies = len(policy_df)
     
-    for index, data in tqdm(policy_df.iterrows()): 
+    for index, data in tqdm(policy_df.iterrows(), disable=disable_pbar): 
         data['date'] = datetime.strptime(data['date'], "%Y-%m-%d")
 
         # If this is a state-level policy, then we already have the DataFrame to use. 

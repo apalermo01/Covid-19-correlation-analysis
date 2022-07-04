@@ -13,6 +13,7 @@ from covid_project.data_utils import get_cases, get_policies, clean_policy_data
 import seaborn as sns
 import pandas as pd
 import datetime
+import numpy as np
 
 """
 TODO: error mode in case and policy plot where bad county name is given
@@ -80,12 +81,15 @@ def plot_cases(case_data=None,
                save_figure=False, 
                fig_size=(10, 5), 
                filename="Plot cases figure.png",
-               ret=False):
+               ret=False,
+               date_range = ["2020-01-01", "2020-12-31"]):
     
     """ A function which plots the COVID-19 case/death data and 7 day average.
     
     Parameters
     ---------- 
+    case_data: pandas DataFrame 
+        DataFrame for plotting 
     level: {'county', 'state', 'national'}
         Value to pass to get_cases() 
         Default: "county"
@@ -95,8 +99,6 @@ def plot_cases(case_data=None,
     state: string 
         desired state
         Default: "California"
-    case_data: pandas DataFrame 
-        DataFrame to use 
     fade: float
         level of transparency for new_cases_1e6 and new_deaths_1e6 
         Default: 0.75
@@ -108,10 +110,13 @@ def plot_cases(case_data=None,
     fig: matplotlib figure object
     save_figure: boolean
         Default: False
-    figure_width: float
+    fig_size: tuple
     filename: string
         Name of file if saving figure
-        
+    ret: boolean
+        If true, returns the figure, axes, and data used to generate the plot
+    date_range: list
+        [start_date, end_date] in "YYYY-mm-dd" format
     Returns 
     ----------
     matplotlib.figure.Figure
@@ -127,6 +132,10 @@ def plot_cases(case_data=None,
                       level=level,
                       county=county,
                       state=state)
+    
+    # filter to date range
+    cases = cases[(cases.index > pd.to_datetime(date_range[0])) &\
+                  (cases.index < pd.to_datetime(date_range[1]))]
         
     # Set up plots. 
     if ax is None: 
@@ -188,7 +197,7 @@ def plot_cases_and_policies(
         save_figure=False, 
         filename="Plot cases and policies figure.png", 
         fig_size=(10, 5), 
-        legend_position=(0, 0)
+        date_range = ["2020-01-01", "2020-12-31"],
     ):
 
     
@@ -200,19 +209,23 @@ def plot_cases_and_policies(
         county of interest
     state : string
         state of interest
-    policies : array-like
-        policies to plot (default: face mask mandates in public spaces and businesses, shelter in place, 
-        and state of emergency)
+    case_data : data frame containing case data (results of clean_case_data())
+    policy_data : data frame containing policy data (results of clean_policy_data())
     colors : array-like
-        line colors for respective policies (in order) (default: k, b, r, g)
+        line colors for respective policies 
+    policies : list of policies to plot
     labels : array-like 
         legend labels for the selected policies (default: "face mask mandate (public spaces)", 
         "face mask mandate (businesses)", "shelter in place", and "state of emergency")
-    style : string 
-        sns plot style (whitegrid by default, dark styles not recommended)
-    fade : float
-        level of transparency for new_cases_1e6 and new_deaths_1e6 (default: 0.75)
-    
+    save_figure : boolean
+        If true, saves the figure to file
+    filename : string
+        filename to use for saving the figure
+    fig_size : tuple
+        size of output figure
+    date_range: list
+        [start_date, end_date] in "YYYY-mm-dd" format
+        
     The marks for policies are aligned with the 7 day average, using colors to indicate policy types, endcaps for 
     state (diamond) or county (circle), and linestyle to distinguish the start (solid line) or stop (dotted line) of a 
     policy. 
@@ -271,7 +284,7 @@ def plot_cases_and_policies(
             
             # Calculate where to position the line horizontally.  
             row_date = row.date
-            row_date = datetime.datetime.strptime(row_date, "%Y-%m-%d")
+            #row_date = datetime.datetime.strptime(row_date, "%Y-%m-%d")
             days_serial = (row_date - pd.Timestamp(year=1970, month=1, day=1)).days
             cent_coord = ax[i].transLimits.transform((days_serial, center))[1]
             #print(f"days_serial={days_serial}; cent_coord={cent_coord}")
@@ -312,7 +325,7 @@ def plot_cases_and_policies(
             else: 
                 line.set_marker('o')
                 
-            ax[i].legend(loc="upper left")
+            ax[i].legend(loc="right")
         # ax[i].set_ylim(-max(ax[i].lines[0].get_ydata())*(0.15))
         
     # Make the legend. 
@@ -336,15 +349,14 @@ def plot_cases_and_policies(
                    
      
     # Finally, draw the legend. 
-    leg1 = ax[0].legend(loc='upper left')
-    leg2 = ax[0].legend(handles=legend_lines, loc='center',  bbox_to_anchor=legend_position, ncol=4)
-    ax[0].add_artist(leg1);
+    leg1 = ax[1].legend(loc='right')
+    leg2 = ax[1].legend(handles=legend_lines, loc='lower center',  bbox_to_anchor=(0.5, -0.5), ncol=4)
+    ax[1].add_artist(leg1);
     
     if save_figure: 
         plt.savefig(filename, bbox_inches='tight')
         
     return fig, ax
-
 
 def plot_delta_stats(delta_stats, 
                      num_days=14, 
@@ -360,11 +372,17 @@ def plot_delta_stats(delta_stats,
     fig, ax = plt.subplots(ncols=4, figsize=[10, 15], sharey=True)
 
     def eval_color(num, error): 
-        if num+error<0: 
+        # if num+error<0: 
+        #     return 'g'
+        # elif num-error>0: 
+        #     return 'r'
+        # else: 
+        #     return 'k'
+        if (np.abs(num) - error > 0) and num < 0:
             return 'g'
-        elif num-error>0: 
+        elif (np.abs(num) - error > 0) and num > 0:
             return 'r'
-        else: 
+        else:
             return 'k'
 
     for i, index in enumerate(delta_stats.index): 
@@ -403,9 +421,9 @@ def plot_delta_stats(delta_stats,
         ax[i].tick_params(bottom=True, top=True, labelbottom=True, labeltop=True)
     plt.yticks(range(len(delta_stats.index)), delta_stats.index, fontsize=8)
     if interval == 'std':
-        title = f"Correlations in covid policy metrics {num_days} days after implementation (errorbar = std)"
+        title = f"Average change in covid metrics {num_days} days after implementation (errorbar = std)"
     else: 
-        title = f"Correlations in covid policy metrics {num_days} days after implementation (CI = {interval})"
+        title = f"Average change in covid metrics {num_days} days after implementation (CI = {interval})"
     plt.suptitle(title, y=0.95);
     
     if save_figure: 
