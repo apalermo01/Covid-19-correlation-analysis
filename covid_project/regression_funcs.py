@@ -109,7 +109,7 @@ def plot_rsquared_heatmap(data,
                           dep_var,
                           sort_values = True,
                           ax = None,
-                          save = False,
+                          save_figure = False,
                           filename = "./figures/rsquared_heatmap.png"):
     """Plots a heatmap of r-squared values for the given dependent variable. Generates a column
     for each set of bins and a row for each policy, where the color is the r-squared value.
