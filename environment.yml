@@ -1,0 +1,12 @@
+name: covid_project
+channels:
+  - defaults
+dependancies:
+  - numpy
+  - pandas
+  - matplotlib
+  - sodapy
+  - streamlit
+  - seaborn
+  - scikit-learn
+  - tqdm
