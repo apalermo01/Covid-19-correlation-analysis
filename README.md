@@ -12,3 +12,9 @@ The core of this project exists in a series of jupyter notebooks, which are orga
 - 04: checking the average change in cases and deaths 14 days after a policy was implemented
 - 05: running the first round of linear regression models (single policy)
 - 06: analyzing the results of the runs started in 05 
+
+# Objectives for next round of development
+
+- [ ] re-run models using multiple policies in one go, see if the p-values change
+- [ ] re-run the models but remove one of the categorical variables
+- [ ] re-run models using decision trees, random forests, and / or XGBoost
