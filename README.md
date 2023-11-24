@@ -1,16 +1,20 @@
-# covid-19-data-analysis
-A study on how the COVID-19 responses might be affecting new case and death numbers.
+# Covid-19 Correlation Analysis
+The objective of this project is to experiment with regression analysis and feature engineering to study how the COVID-19 responses might have affected new case and death numbers in the first year of the pandemic. 
 
-Case and death data was sourced from the Johns Hopkins University's COVID-19 tracking project. Policy data was sourced from data.gov. 
+Case and death data were sourced from the Johns Hopkins University's COVID-19 tracking project. Policy data was sourced from data.gov. 
 
-There are 2 notebooks associated with this project: 
+The core of this project exists in a series of jupyter notebooks, which are organized as follows:
 
-### 1) Covid-19 data analysis.ipynb
+- 00: high-level overview of the methodology used and current results
+- 01: Exploratory data analysis on case and death data
+- 02: Exploratory data analysis on policy data
+- 03: Making some basic plots (This notebook is mostly for posterity - I started this project shortly after I started learning python and these plots were one of the first things I tried to make)
+- 04: checking the average change in cases and deaths 14 days after a policy was implemented
+- 05: running the first round of linear regression models (single policy)
+- 06: analyzing the results of the runs started in 05 
 
-This is the main notebook associated with the project. It contains a brief discussion of data cleaning, plotting cases and deaths over time at the county, state, and national level, overlays with selected policy implementations, and a correlation between policies and changes in new case and death numbers. 
+# Objectives for next round of development
 
-Policies were correlated with two key metrics in case and death numbers: the difference in new cases and deaths on the day of policy implementation and 14 days later, and the change in curvature of the new cases and new deaths plot- which I refer to as the 'acceleration' of new cases and new deaths.
-
-### 2) Covid-19 data cleaning.ipynb
-
-This is the detailed column-by-column data cleaning process that went into preparing the Covid-19 data analysis notebook, including a detailed analysis of invalid datapoints. 
+- [ ] re-run models using multiple policies in one go, see if the p-values change
+- [ ] re-run the models but remove one of the categorical variables
+- [ ] re-run models using decision trees, random forests, and / or XGBoost

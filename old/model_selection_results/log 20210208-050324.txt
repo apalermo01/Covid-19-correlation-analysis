@@ -1,0 +1,766 @@
+
+    algorithms: ['OLS', 'Lasso', 'Ridge', 'EN', 'Decision_Tree', 'RF']
+    parameters: All default
+    training test size: 0.1
+    data: R squared values
+
+    all bins: 
+    [(0, 10), (11, 999)] 
+[(0, 50), (51, 999)] 
+[(0, 100), (101, 999)] 
+[(0, 3), (4, 10), (11, 999)] 
+[(0, 3), (4, 20), (21, 999)] 
+[(0, 3), (4, 50), (51, 999)] 
+[(0, 10), (11, 20), (21, 999)] 
+[(0, 10), (11, 40), (41, 999)] 
+[(0, 10), (11, 60), (61, 999)] 
+[(0, 20), (21, 40), (41, 999)] 
+[(0, 20), (21, 60), (61, 999)] 
+[(0, 20), (21, 100), (101, 999)] 
+[(0, 10), (11, 20), (21, 30), (31, 40), (41, 50), (51, 999)] 
+[(0, 10), (11, 30), (31, 60), (61, 100), (101, 150), (151, 210), (211, 999)] 
+[(0, 20), (21, 40), (41, 60), (61, 100), (101, 140), (141, 200), (201, 999)] 
+
+
+    Comments: 
+
+    ======================================
+
+prepping data
+data prepped
+bins: [(0, 10), (11, 999)]
+time elapsed: 74.636305809021
+----------------------------------------
+training OLS
+time elapsed: 5.347735404968262; R^2 = 0.10455494999556669
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 2.965027093887329; R^2 = 0.08913422645863056
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.2236323356628418; R^2 = 0.10455468357078579
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 3.0582828521728516; R^2 = 0.0795422035109935
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 9.41990065574646; R^2 = 0.15123040829128342
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 57.76622676849365; R^2 = 0.1512668581126011
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 50), (51, 999)]
+time elapsed: 64.78736305236816
+----------------------------------------
+training OLS
+time elapsed: 5.078466415405273; R^2 = 0.11991308308363224
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 2.591681957244873; R^2 = 0.10260579570084627
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.0109882354736328; R^2 = 0.11991226694939416
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 2.9852454662323; R^2 = 0.09458680453112689
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 9.71538782119751; R^2 = 0.160730640365078
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 63.5617253780365; R^2 = 0.16052449744723607
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 100), (101, 999)]
+time elapsed: 64.8305492401123
+----------------------------------------
+training OLS
+time elapsed: 5.23116660118103; R^2 = 0.17667703924929223
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 4.8005735874176025; R^2 = 0.15347029005891455
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.0582249164581299; R^2 = 0.17667713647729089
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 3.3300654888153076; R^2 = 0.14093670307032313
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 9.421143293380737; R^2 = 0.2325126911622203
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 57.0705451965332; R^2 = 0.23226738803958558
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 3), (4, 10), (11, 999)]
+time elapsed: 92.42865204811096
+----------------------------------------
+training OLS
+time elapsed: 9.932474851608276; R^2 = 0.0781966434805389
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 3.53945255279541; R^2 = 0.0669477361698918
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.6133999824523926; R^2 = 0.07819672659062193
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 3.2927000522613525; R^2 = 0.059654615516454124
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 13.578604221343994; R^2 = 0.11026808061484072
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 86.83583188056946; R^2 = 0.11029344817059894
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 3), (4, 20), (21, 999)]
+time elapsed: 90.9989128112793
+----------------------------------------
+training OLS
+time elapsed: 10.076430797576904; R^2 = 0.09448365208920029
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 3.856243848800659; R^2 = 0.07984680748558481
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.563364028930664; R^2 = 0.09448377841777489
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 3.3611693382263184; R^2 = 0.07169108888424436
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 14.562979698181152; R^2 = 0.13345078318487147
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 93.7186987400055; R^2 = 0.13346115876547637
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 3), (4, 50), (51, 999)]
+time elapsed: 92.96070718765259
+----------------------------------------
+training OLS
+time elapsed: 10.634050130844116; R^2 = 0.14191039869075184
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 4.004828691482544; R^2 = 0.12172227824262993
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.571483850479126; R^2 = 0.1419107825009993
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 3.9558048248291016; R^2 = 0.11227173766036058
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 14.762328863143921; R^2 = 0.19142086521395785
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 93.64349126815796; R^2 = 0.1910819310091314
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 10), (11, 20), (21, 999)]
+time elapsed: 91.13755297660828
+----------------------------------------
+training OLS
+time elapsed: 9.968394994735718; R^2 = 0.10813305475531254
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 3.4966812133789062; R^2 = 0.09261189292645178
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.5554473400115967; R^2 = 0.10813237931239617
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 3.7879111766815186; R^2 = 0.08312821204175158
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 14.502188444137573; R^2 = 0.15501868366148697
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 90.99515342712402; R^2 = 0.15494863927236335
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 10), (11, 40), (41, 999)]
+time elapsed: 91.37061929702759
+----------------------------------------
+training OLS
+time elapsed: 10.210304737091064; R^2 = 0.1106767473478214
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 3.6333117485046387; R^2 = 0.09370567434331145
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.525174856185913; R^2 = 0.11067668734900182
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 3.7919931411743164; R^2 = 0.08537789523016548
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 14.702571868896484; R^2 = 0.15490439500088804
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 93.24032282829285; R^2 = 0.15486566222317466
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 10), (11, 60), (61, 999)]
+time elapsed: 91.17543983459473
+----------------------------------------
+training OLS
+time elapsed: 10.126931428909302; R^2 = 0.125554391394196
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 3.8773179054260254; R^2 = 0.10755109317449263
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.6019501686096191; R^2 = 0.12555569145806167
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 4.450182914733887; R^2 = 0.09959925658589042
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 15.774511337280273; R^2 = 0.171465545474922
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 96.99085211753845; R^2 = 0.17148481386281755
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 20), (21, 40), (41, 999)]
+time elapsed: 90.61772513389587
+----------------------------------------
+training OLS
+time elapsed: 10.352506875991821; R^2 = 0.10993159020113619
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 3.678532361984253; R^2 = 0.09337824775643522
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.6354074478149414; R^2 = 0.10993202488983911
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 4.0332560539245605; R^2 = 0.08460587219778193
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 14.44472599029541; R^2 = 0.1508386527273583
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 91.08923363685608; R^2 = 0.15085775775886767
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 20), (21, 60), (61, 999)]
+time elapsed: 90.97822284698486
+----------------------------------------
+training OLS
+time elapsed: 10.128974676132202; R^2 = 0.1139881392122849
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 3.8723809719085693; R^2 = 0.09725274931182526
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.630497932434082; R^2 = 0.11398833148931631
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 4.672052383422852; R^2 = 0.08956024005043839
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 14.995846271514893; R^2 = 0.1541131873091922
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 96.10230112075806; R^2 = 0.1540265782728657
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 20), (21, 100), (101, 999)]
+time elapsed: 90.0915756225586
+----------------------------------------
+training OLS
+time elapsed: 10.277293920516968; R^2 = 0.11653353109286424
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 6.824015378952026; R^2 = 0.09951501655698958
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 1.6060254573822021; R^2 = 0.116533993998444
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 4.251892566680908; R^2 = 0.09026975395812697
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 13.76686406135559; R^2 = 0.15247661787032518
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 86.58083248138428; R^2 = 0.1524602286308202
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 10), (11, 20), (21, 30), (31, 40), (41, 50), (51, 999)]
+time elapsed: 179.40821886062622
+----------------------------------------
+training OLS
+time elapsed: 24.46389389038086; R^2 = 0.09341294924947274
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 13.170007467269897; R^2 = 0.07921441088674397
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 4.525495767593384; R^2 = 0.0934144723582997
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 6.881631374359131; R^2 = 0.07219917890968042
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 33.14936590194702; R^2 = 0.12970967665351685
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 209.60892152786255; R^2 = 0.12944627137561837
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 10), (11, 30), (31, 60), (61, 100), (101, 150), (151, 210), (211, 999)]
+time elapsed: 212.77478075027466
+----------------------------------------
+training OLS
+time elapsed: 28.589937925338745; R^2 = 0.19990149168114546
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 18.79867696762085; R^2 = 0.15372236136638162
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 7.13129186630249; R^2 = 0.1999013297189225
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 7.754878282546997; R^2 = 0.14332067406797366
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 40.176146507263184; R^2 = 0.25006939865587696
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 249.20647716522217; R^2 = 0.2490165738301371
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+prepping data
+data prepped
+bins: [(0, 20), (21, 40), (41, 60), (61, 100), (101, 140), (141, 200), (201, 999)]
+time elapsed: 223.13617086410522
+----------------------------------------
+training OLS
+time elapsed: 24.802727937698364; R^2 = 0.1753204403683042
+{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'normalize': False, 'positive': False}
+OLS done 
+
+
+
+training Lasso
+time elapsed: 17.48651361465454; R^2 = 0.13098701434524018
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+Lasso done 
+
+
+
+training Ridge
+time elapsed: 6.7108824253082275; R^2 = 0.1753199314594287
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'normalize': False, 'random_state': None, 'solver': 'auto', 'tol': 0.001}
+Ridge done 
+
+
+
+training EN
+time elapsed: 7.685018301010132; R^2 = 0.12378336272410939
+{'alpha': 1.0, 'copy_X': True, 'fit_intercept': True, 'l1_ratio': 0.5, 'max_iter': 1000, 'normalize': False, 'positive': False, 'precompute': False, 'random_state': None, 'selection': 'cyclic', 'tol': 0.0001, 'warm_start': False}
+EN done 
+
+
+
+training Decision_Tree
+time elapsed: 38.53897190093994; R^2 = 0.2189330474515887
+{'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+Decision_Tree done 
+
+
+
+training RF, num_trees = 10
+time elapsed: 243.81160306930542; R^2 = 0.21807911161112925
+{'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+RF done 
+
+
+
+
+==========================================
+
+Done!
+time elapsed: 4119.598744869232
