@@ -1,0 +1,11 @@
+numpy
+pandas
+matplotlib
+streamlit
+seaborn
+scikit-learn
+tqdm
+tabulate
+sodapy
+us
+jupyter
