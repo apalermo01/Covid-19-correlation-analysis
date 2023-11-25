@@ -13,7 +13,8 @@ import pandas as pd
 import seaborn as sns
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
-
+from scipy import stats
+import math
 from covid_project.data_utils import clean_policy_data, get_cases, get_policies
 
 """
@@ -423,16 +424,13 @@ def plot_delta_stats(
     """Evaluate the correlations between policy implementations and new cases / deaths."""
 
     # force interval to std
-    interval = "std"
+    # interval = "std"
+    assert interval in ['std', '0.9', '0.95', '0.99']
     fig, ax = plt.subplots(ncols=4, figsize=[10, 15], sharey=True)
 
     def eval_color(num, error):
-        # if num+error<0:
-        #     return 'g'
-        # elif num-error>0:
-        #     return 'r'
-        # else:
-        #     return 'k'
+        # green: policy seems to have a positive effect on cases
+        # red: policy seems to have a negative effect on cases
         if (np.abs(num) - error > 0) and num < 0:
             return "g"
         elif (np.abs(num) - error > 0) and num > 0:
@@ -442,19 +440,16 @@ def plot_delta_stats(
 
     for i, index in enumerate(delta_stats.index):
         vals = delta_stats.loc[index][:4].values
-        vals_std = delta_stats.loc[index][4:-1].values
-        n = delta_stats.loc[index][-1]
+        vals_std = delta_stats.loc[index][4:8].values
+        n = delta_stats.loc[index][8]
 
-        for j, (val, val_std) in enumerate(zip(vals, vals_std)):
+        for j, (col, val, val_std) in enumerate(zip(['case', 'case_accel', 'death', 'death_accel'], vals, vals_std)):
             # if interval is 'std', set the errorbar to the same width as the std
             if interval == "std":
                 err = val_std
             # if a confidence interval is specified, set error bar to with width of the desired CI
             else:
-                # Since the population variance is unkown, use the t-score (two-tail)
-                # This method is still under development
-                t = stats.t.ppf(1 - (interval / 2), n)
-                err = val + t * (val_std / math.sqrt(n))
+                err = delta_stats[f'{col}_{interval}_ci_range'].loc[index]
             # print(f"val = {val}; error = {err}")
             ax[j].errorbar(
                 y=i,

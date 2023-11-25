@@ -1,6 +1,7 @@
 import os
 from datetime import timedelta
-
+from scipy import stats
+import math
 import numpy as np
 import pandas as pd
 
@@ -205,6 +206,12 @@ def calc_delta_stats(deltas, measure_period=14, min_samples=10):
     # Initialize empty arrays for the associated statistics.
     case_avg, death_avg, case_std, death_std, num_samples = [], [], [], [], []
     case_accel_avg, death_accel_avg, case_accel_std, death_accel_std = [], [], [], []
+    CIs = {f"{col}_{ci}": {'low': [], 'high': []}
+           for col in ['case', 'case_accel', 'death', 'death_accel']
+           for ci in ['0.9', '0.95', '0.99']}
+
+    raws = {}
+
 
     # Loop through all the policy types.
     for policy in policy_types:
@@ -252,6 +259,31 @@ def calc_delta_stats(deltas, measure_period=14, min_samples=10):
         case_accel_std.append(np.nanstd(case_accel_data.to_numpy()))
         death_accel_std.append(np.nanstd(death_accel_data.to_numpy()))
 
+        # calculate the confidence intervals
+        # for ci in 0.9, 0.95, 0.99:
+        #     for col_data, col_str in zip(
+        #             [case_data, case_accel_data, death_data, death_accel_data],
+        #             ['case', 'case_accel', 'death', 'death_accel']):
+        #         mu = np.nanmean(col_data.to_numpy())
+        #         sigma = np.nanstd(case_data.to_numpy())
+        #         err = _calculate_ci(interval=ci,
+        #                             n = len(col_data),
+        #                             val = mu,
+        #                             val_std = sigma)
+
+        #         CIs[f"{col_str}_{ci}"]['low'].append(mu-err)
+        #         CIs[f"{col_str}_{ci}"]['high'].append(mu+err)
+
+        if len(case_data) > min_samples:
+            raws[policy] = {
+                    'cases': case_data,
+                    'deaths': death_data,
+                    'case_accel': case_accel_data,
+                    'death_accel': death_accel_data
+                    }
+
+
+
     # Construct the dataframe to tabulate the data.
     delta_stats = pd.DataFrame(
         np.transpose(
@@ -265,7 +297,7 @@ def calc_delta_stats(deltas, measure_period=14, min_samples=10):
                 death_std,
                 death_accel_std,
                 num_samples,
-            ]
+                ]
         ),
         index=policy_types,
         columns=[
@@ -278,12 +310,23 @@ def calc_delta_stats(deltas, measure_period=14, min_samples=10):
             "death_std",
             "death_accel_std",
             "num_samples",
-        ],
+            ]
     )
 
     # Drop record with less than min_samples samples.
     delta_stats.drop(
         delta_stats[delta_stats["num_samples"] <= min_samples].index, inplace=True
     )
+    def _calc_ci(row, interval, col):
+        mu = row[f"{col}_avg"]
+        err = np.abs(mu + row[f"t_{interval}"] * (row[f"{col}_std"] / math.sqrt(row[f"num_samples"])))
+        return pd.Series([err, err-mu, err+mu])
 
-    return delta_stats
+    for interval in [0.9, 0.95, 0.99]:
+        delta_stats[f't_{interval}'] = delta_stats.apply(lambda x: stats.t.ppf(1-(interval/2),x.num_samples), axis=1)
+        for col in ['case', 'case_accel', 'death', 'death_accel']:
+            delta_stats[[f'{col}_{interval}_ci_range',
+                         f'{col}_{interval}_low',
+                         f'{col}_{interval}_high']] = delta_stats.apply(_calc_ci, args=(interval, col), axis=1) 
+
+    return delta_stats, raws
