@@ -12,10 +12,11 @@ from datetime import timedelta
 from datetime import datetime
 import us
 import re
-#from tqdm import tqdm
 from tqdm.notebook import tqdm
 from typing import Tuple, Union, List
+import logging
 
+logger = logging.getLogger(__name__)
 
 ##################################################################################
 ### DATA INGESTION / RETRIEVAL ###################################################
@@ -23,7 +24,7 @@ from typing import Tuple, Union, List
 def load_covid_data(path: str = "./data/covid_timeseries.csv",
                     force_reload: bool = False) -> pd.DataFrame:
     """Loads raw covid data, pulling it from file or downloading it from the source
-    
+
     Parameters
     ----------
     path : str
@@ -39,8 +40,10 @@ def load_covid_data(path: str = "./data/covid_timeseries.csv",
     """
 
     if os.path.exists(path) and not force_reload:
+        logger.info(f"reading data from {path}")
         df = pd.read_csv(path, index_col=0)
     else:
+        logger.info("reading data from data.world")
         df = pd.read_csv('https://query.data.world/s/cxcvunxyn7ibkeozhdsuxub27abl7p')
         os.makedirs(os.path.dirname(path), exist_ok=True)
         df.to_csv(path)
@@ -63,8 +66,8 @@ def load_policy_data(path: str = "./data/covid_policies.csv",
     Returns
     ----------
     Pandas dataframe with raw covid policy data
-    """ 
-    
+    """
+
     if os.path.exists(path) and not force_reload:
         df = pd.read_csv(path, index_col=0)
     else:
@@ -138,9 +141,9 @@ def eval_df(df,
     """
     table = []
     assert print_result or return_result, "one of print_result or return_result must be true, otherwise there will be no output!"
-    for col in df.columns: 
+    for col in df.columns:
         table.append([col, df[col].isnull().sum(), set([type(i) for i in df[col].values])])
-    
+
     res = tabulate(table, headers=["field", "num_nulls", "datatypes"])
     if print_result:
         print(res)
@@ -149,13 +152,13 @@ def eval_df(df,
 
 def check_data(series,
                expect_type='int',
-               check_all=True, 
+               check_all=True,
                check_ints=False,
                check_types=False,
                check_negs=True,
                name='Series'):
     """Check that the input array is of the expected datatype, and check for negative values
-    
+
     Parameters
     ------------
     series
@@ -174,27 +177,27 @@ def check_data(series,
     """
 
     # check taht all values are integers
-    if check_ints: 
+    if check_ints:
         all_ints = lambda ser: all([i.is_integer() for i in ser.values])
         print(f"all decimal components zero? (expect true) {all_ints(series)}")
-        return 
-    
-    if check_types: 
+        return
+
+    if check_types:
         types = lambda ser: set([type(i) for i in ser.values])
         print(f"datatypes (expect {expect_type}): {types(series)}")
-        return 
-    
-    if check_all: 
+        return
+
+    if check_all:
         all_ints = lambda ser: all([i.is_integer() for i in ser.values])
         print(f"checking {name}:")
-        
+
         types = set([type(i) for i in series.values])
         print(f"datatypes (expect {expect_type}): {types}")
 
         nulls = series.isnull().sum()
         print(f"number of nulls: {nulls}")
 
-        if check_negs: 
+        if check_negs:
             num_negative = (series.values < 0).sum()
             print(f"number of negative values: {num_negative}")
         print("=================================================\n")
@@ -216,7 +219,7 @@ def clean_covid_data(df=None,
     if df is None:
         if os.path.exists(clean_path) and not force_reclean:
             df = pd.read_csv(clean_path, index_col=0)
-            df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')  
+            df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
             return df
 
         df = load_covid_data(path, force_reload)
@@ -251,7 +254,7 @@ def clean_covid_data(df=None,
     df = df.drop(df[df['state'].isin(['Puerto Rico', 'District of Columbia'])].index)
 
     # ensure date is stored as a datetime
-    df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')  
+    df['date'] = pd.to_datetime(df['date'].str[:10], format='%Y-%m-%d')
 
     # fill in missing population data
     # https://data.statesmanjournal.com/census/total-population/total-population-change/chugach-census-area-alaska/050-02063/
@@ -281,7 +284,7 @@ def clean_covid_data(df=None,
     # fill in 0s for 7 day averages for the first few days
     df[['new_cases_7day', 'new_deaths_7day']] = df[['new_cases_7day', 'new_deaths_7day']].mask(
     (df['date'] < pd.to_datetime('2020-01-30', format='%Y-%m-%d')), df[['new_cases_7day', 'new_deaths_7day']].fillna(0))
-    
+
     # re-calculate rolling averages where 7 day average is null
     nulls_case7day  = df[df['new_cases_7day' ].isnull()]
     nulls_death7day = df[df['new_deaths_7day'].isnull()]
@@ -292,7 +295,7 @@ def clean_covid_data(df=None,
     for index, data in tqdm(nulls_case7day.iterrows(),
                             desc="re calculating rolling averages for cases",
                             total=num_elem):
-            
+
         df.loc[index, ['new_cases_7day']] = np.sum(([df['new_cases'][
             (df['full_loc_name']==data.full_loc_name) & 
             ((df['date']<=data.date) & (df['date']>data.date-days_7))
@@ -302,7 +305,7 @@ def clean_covid_data(df=None,
     for index, data in tqdm(nulls_death7day.iterrows(),
                             desc='re-calculating rolling averages for deaths',
                             total=num_elem):
-            
+
         df.loc[index, ['new_deaths_7day']] = np.sum(([df['new_deaths'][
             (df['full_loc_name']==data.full_loc_name) & 
             ((df['date']<=data.date) & (df['date']>data.date-days_7))
@@ -330,16 +333,16 @@ def clean_policy_data(
     Pipeline for cleaning covid policy data
     :param df: dataframe of raw uncleaned data
     """
-    
+
     # get covid policy data
     if df is None:
         if os.path.exists(clean_path) and not force_reclean:
             df = pd.read_csv(clean_path, index_col=0)
             df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
             return df
-        
+
         df = load_policy_data(path, force_reload)
-    
+
     # remove irrelevant columns
     df = df.drop(['geocoded_state', 'comments', 'source', 'total_phases'], axis=1)
     # get covid timeseries data
@@ -357,7 +360,7 @@ def clean_policy_data(
     ### county
     # convert nulls in count to 'statewide'
     df.fillna(value={'county': 'statewide'}, inplace=True)
-    
+
     # convert to lowercase
     df['county'] = df['county'].str.lower()
 
@@ -378,10 +381,10 @@ def clean_policy_data(
     assert len(mismatches) == 0, f"[ERROR] found mismatches between timeseries and policy dataset: {mismatches}"
 
     # fips code
-    for index, data in df.iterrows(): 
+    for index, data in df.iterrows():
         if data.policy_level == 'state':
             # print(us.states.lookup(str(data.state)))
-            
+
             # https://github.com/unitedstates/python-us/issues/65
             df.loc[index, 'fips_code'] = np.int64(us.states.lookup(
                 us.states.mapping("name", "abbr").get(data.state)
@@ -391,7 +394,7 @@ def clean_policy_data(
     # fix typos in date
     bad_mask = df['date'].str.contains('0020')
     df.loc[bad_mask, 'date'] = ['2020' + elem[4:] for elem in df.loc[bad_mask, 'date'].values]
-    df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
+    df['date'] = pd.to_datetime(df['date'].str[:10], format='%Y-%m-%d')
     df = df.drop(df[(df['date']<min(timeseries_df['date'])) | (df['date']>max(timeseries_df['date']))].index)
 
     # handle policy names
@@ -429,23 +432,23 @@ def get_cases(case_dataframe=None,
               level="county",
               county="orange",
               state="California"):
-    
+
     """ Return the new_case and new_death numbers at the given level of aggregation (county, state, or national). 
-    
+
     Parameters
     ----------
     level : {'county', 'state', 'national'}
-        If county, returns a DataFrame filtered to a specific county (default). 
-        If state, aggregates the DataFrame to the state level. 
+        If county, returns a DataFrame filtered to a specific county (default).
+        If state, aggregates the DataFrame to the state level.
         If national, or any other input, returns the DataFrame aggregated to the national level. 
-    county : string 
+    county : string
         desired county
-    state : string 
+    state : string
         desired state
-    case_dataframe : pandas DataFrame 
+    case_dataframe : pandas DataFrame
         DataFrame to use, case_dataframe by default
-    
-    Returns 
+
+    Returns
     ----------
     DataFrame
         case_data filtered to a specific county or aggregated to the state / national level with index=date
@@ -463,44 +466,44 @@ def get_cases(case_dataframe=None,
                                                                                             ]]
 
         return return_case_dataframe
-    
+
     # If this is filtered at the state level, filter df to desired state. Otherwise, return national-level data.
-    if level == "state": 
+    if level == "state":
         case_dataframe = case_dataframe[case_dataframe['state'] == state]
 
     # Reindex on location name.
     case_dataframe = case_dataframe.set_index(["full_loc_name"])
-    
+
     # Get a list of all dates.
     all_dates = case_dataframe['date'].unique()
 
     # Get the total population from the county populations.
     total_population =  sum([(pops / 1e5) for pops in case_dataframe[case_dataframe['date'] == all_dates[0]]['total_population']]) 
-    
+
     # Add up the case and death #s that have the same date.
-    new_cases       = [sum([(county_cases / total_population) 
+    new_cases       = [sum([(county_cases / total_population)
                               for county_cases in case_dataframe[case_dataframe['date'] == dates]['new_cases_1e6']]) 
                               for dates in all_dates]
 
-    new_deaths      = [sum([(county_cases / total_population) 
+    new_deaths      = [sum([(county_cases / total_population)
                               for county_cases in case_dataframe[case_dataframe['date'] == dates]['new_deaths_1e6']]) 
                               for dates in all_dates]
 
-    new_cases_7day  = [sum([(county_cases / total_population) 
+    new_cases_7day  = [sum([(county_cases / total_population)
                               for county_cases in case_dataframe[case_dataframe['date'] == dates]['new_cases_7day_1e6']]) 
                               for dates in all_dates]
 
-    new_deaths_7day = [sum([(county_cases / total_population) 
+    new_deaths_7day = [sum([(county_cases / total_population)
                               for county_cases in case_dataframe[case_dataframe['date'] == dates]['new_deaths_7day_1e6']]) 
                               for dates in all_dates]
 
 
     return_case_dataframe = pd.DataFrame(data={'date'               : all_dates,
-                                   'new_cases_1e6'      : new_cases, 
+                                   'new_cases_1e6'      : new_cases,
                                    'new_deaths_1e6'     : new_deaths,
                                    'new_cases_7day_1e6' : new_cases_7day,
                                    'new_deaths_7day_1e6': new_deaths_7day
-                                   }).set_index(["date"]) 
+                                   }).set_index(["date"])
     return return_case_dataframe
 
 def get_policies(policy_dataframe=None,
@@ -508,25 +511,25 @@ def get_policies(policy_dataframe=None,
                     county="statewide",
                     state_policies=True,
                     county_policies=True):
-       
-    """Get the policy data at county level, state level, or both.  
+
+    """Get the policy data at county level, state level, or both.
 
     Parameters
     ----------
-    state : string 
+    state : string
         selected state
     county : string
         selected county
-    state_policies : boolean 
+    state_policies : boolean
         include policies at the state level (default: True)
-    county_policies : boolean 
+    county_policies : boolean
         include policies at the county level (default: True)
-    
+
     Returns
-    ---------- 
+    ----------
     filtered DataFrame
     """
-    
+
     if policy_dataframe is None:
         raise NotImplementedError
 
@@ -535,13 +538,13 @@ def get_policies(policy_dataframe=None,
 
         return policy_dataframe[(policy_dataframe['state'] == state) &
                   ((policy_dataframe["county"] == county) | (policy_dataframe["county"] == "statewide"))]
-    
+
     # state policies only
-    elif state_policies and not county_policies: 
+    elif state_policies and not county_policies:
         return policy_dataframe[ (policy_dataframe['state'] == state) & (policy_dataframe["county"] == "statewide")]
-    
+
     # county policies only
-    else:  
+    else:
          return policy_dataframe[ (policy_dataframe['state'] == state) & (policy_dataframe["county"] == county)]
 
 def generate_state_case_dict(case_df,
@@ -593,20 +596,20 @@ def calculate_deltas(case_df,
                      results_path="./data/deltas/",
                      force_run=False,
                      save_results=True,
-                     disable_pbar=False): 
-    """For every policy implementation at the state and county level, calculate the change in case and death numbers. 
-    
+                     disable_pbar=False):
+    """For every policy implementation at the state and county level, calculate the change in case and death numbers.
+
     Parameters
-    ---------- 
+    ----------
     case_df : pandas DataFrame
         output of clean_case_data()
     policy_df : pandas DataFrame
         output of clean_policy_data()
     measure_period : int
         time to wait (in days) before measuring a change in new case or death numbers (14 by default)
-    filtered_policies : array-like 
-        specify policies to select (defaul: None- calulate deltas for all policies)
-    state_cases_dict : 
+    filtered_policies : array-like
+        specify policies to select (default: None- calulate deltas for all policies)
+    state_cases_dict :
     save_state_data :
     load_state_data_from_file :
     state_data_path :
@@ -616,16 +619,16 @@ def calculate_deltas(case_df,
     disable_pbar : boolean
         If true, suppresses progress bar
 
-    
+
     Returns
-    ----------  
-    A copy of the covid policies df with 2 appended columns for the change in case and death numbers. 
+    ----------
+    A copy of the covid policies df with 2 appended columns for the change in case and death numbers.
     """
-    
+
     # Load all state-aggregated datasets into a dictionary. We expect to need all 50 states so let's take the time to aggregate
     # the state data now so we don't need to do it repeatedly in the loop. 
-    
-    if state_cases_dict is None: 
+
+    if state_cases_dict is None:
         state_cases_dict = generate_state_case_dict(case_df=case_df,
                                                     save_data = save_state_data,
                                                     load_from_file = load_state_data_from_file,
@@ -639,68 +642,69 @@ def calculate_deltas(case_df,
     # Initialize wait period before measurement.
     wait_period = timedelta(days=measure_period)
     day_1 = timedelta(days=1)
-    
-    def sub_calc_deltas(ser, date, wait=wait_period): 
+
+    def sub_calc_deltas(ser, date, wait=wait_period):
         """Wrap repeated calculations in a sub function to avoid repetition."""
         day_1 = timedelta(days=1)
         ser.index = pd.to_datetime(ser.index, format="%Y-%m-%d")
-    
+
         start      = ser[ser.index==date].values[0]
         start_1day = ser[ser.index==date+day_1].values[0]
-        
+
         end        = ser[ser.index==date+wait].values[0]
         end_1day   = ser[ser.index==date+wait+day_1].values[0]
-        
+
         return [start, start_1day, end, end_1day]
-    
+
     # If there we are only examining select policies, then filter those out.
-    if filtered_policies is not None: 
+    if filtered_policies is not None:
         policy_df = policy_df.loc[policy_df['policy_type'].isin(filtered_policies)]
-        
+
     correlated_df = policy_df.copy()
-    
+
     # Initially fill the delta column with nan.
     correlated_df.loc[:, f"case_{measure_period}_day_delta"] = np.nan
     correlated_df.loc[:, f"case_{measure_period}_day_accel"] = np.nan
     correlated_df.loc[:, f"death_{measure_period}_day_delta"] = np.nan
     correlated_df.loc[:, f"death_{measure_period}_day_accel"] = np.nan
-    
 
 
-    #case_df['date'] = datetime.strptime(case_df['date'].values, "%Y-%m-%d")
+
+    # case_df['date'] = datetime.strptime(case_df['date'].str, "%Y-%m-%d")
     case_df['date'] = pd.to_datetime(case_df['date'], format="%Y-%m-%d")
     case_df = case_df.set_index('date')
     total_policies = len(policy_df)
-    
-    for index, data in tqdm(policy_df.iterrows(), disable=disable_pbar): 
-        data['date'] = datetime.strptime(data['date'], "%Y-%m-%d")
+
+    for index, data in tqdm(policy_df.iterrows(), disable=disable_pbar):
+        # print(data['date'])
+        # data['date'] = datetime.strptime(data['date'], "%Y-%m-%d")
 
         # If this is a state-level policy, then we already have the DataFrame to use. 
-        if data.policy_level == 'state': 
+        if data.policy_level == 'state':
             state_df = state_cases_dict[data.state]
             ser_cases = state_df['new_cases_7day_1e6' ]
             ser_deaths = state_df['new_deaths_7day_1e6']
-        
+
         # This must be a county level policy- filter the appropriate data. 
         else:
             ser_cases = case_df['new_cases_7day_1e6' ][case_df['fips_code'] == data.fips_code]
             ser_deaths = case_df['new_deaths_7day_1e6'][case_df['fips_code'] == data.fips_code]
-        
+
 
         # Get the case and death numbers at the appropriate days. 
         c11, c12, c21, c22 = sub_calc_deltas(ser_cases, date=data.date)
         d11, d12, d21, d22 = sub_calc_deltas(ser_deaths, date=data.date)
-           
+
         # Calculate the difference in new cases at the selected dates. 
         correlated_df.at[index, f"case_{measure_period}_day_delta"] = c21 - c11
         correlated_df.at[index, f"death_{measure_period}_day_delta"] = d21 - d11
-        
+
         # Calculate the change in curvature (aka acceleration) of the case / death plots at policy implementation and
         # measure_period days afterwards. 
-        
+
         correlated_df.at[index, f"case_{measure_period}_day_accel"] = ((c12-c11) - (c21-c22)) / measure_period
-        correlated_df.at[index, f"death_{measure_period}_day_accel"] = ((d12-d11) - (d21-d22)) / measure_period    
-    
+        correlated_df.at[index, f"death_{measure_period}_day_accel"] = ((d12-d11) - (d21-d22)) / measure_period
+
     if save_results:
         if not os.path.exists(results_path):
             os.makedirs(results_path)
@@ -708,82 +712,82 @@ def calculate_deltas(case_df,
     return correlated_df, state_cases_dict
 
 def calc_delta_stats(deltas, measure_period=14, min_samples=10):
-    """Take the deltas calculated with each policy and calculate the average and sd. 
+    """Take the deltas calculated with each policy and calculate the average and sd.
     Parameters
-    ---------- 
-    deltas : pandas DataFrame 
+    ----------
+    deltas : pandas DataFrame
         dataframe of policy deltas on which to do the calculations
-    measure_period : int 
+    measure_period : int
         time to wait (in days) before measuring a change in new case or death numbers (14 by default)
-    min_samples : int 
+    min_samples : int
         minimum number of samples that a policy must have for reporting of average and std (default: 10)
-    
+
     Returns
-    ----------   
-    A dataframe with a record for the start/stop of each policy type and the average / std of the change in 
+    ----------
+    A dataframe with a record for the start/stop of each policy type and the average / std of the change in
     case / death numbers measure_period days after implementation
     """
     # Generate a new list of policy types differentiating between start and stop. 
-    policy_types = ([elem + " - start" for elem in deltas['policy_type'].unique()]  
+    policy_types = ([elem + " - start" for elem in deltas['policy_type'].unique()]
                     + [elem + " - stop"  for elem in deltas['policy_type'].unique()])
-    
+
     # Initialize empty arrays for the associated statistics.
     case_avg, death_avg, case_std, death_std, num_samples = [], [], [], [], []
     case_accel_avg, death_accel_avg, case_accel_std, death_accel_std = [], [], [], []
-    
+
     # Loop through all the policy types.
     for policy in policy_types:
-        
+
         # Determine whether this policy is the beginning or end.  
         if policy.endswith("stop"):
             len_index = -7
             start_stop = "stop"
-        else: 
+        else:
             len_index = -8
             start_stop = "start"
-        
+
         # Get arrays of all the deltas for each type of policy 
-        case_data  = deltas[(deltas['policy_type'] == policy[:len_index]) & 
+        case_data  = deltas[(deltas['policy_type'] == policy[:len_index]) &
                             (deltas['start_stop'] == start_stop)][f'case_{measure_period}_day_delta']
 
-        death_data = deltas[(deltas['policy_type'] == policy[:len_index]) & 
+        death_data = deltas[(deltas['policy_type'] == policy[:len_index]) &
                             (deltas['start_stop'] == start_stop)][f'death_{measure_period}_day_delta']
 
-        case_accel_data = deltas[(deltas['policy_type'] == policy[:len_index]) & 
+        case_accel_data = deltas[(deltas['policy_type'] == policy[:len_index]) &
                                  (deltas['start_stop'] == start_stop)][f'case_{measure_period}_day_accel']
-         
-        death_accel_data = deltas[(deltas['policy_type'] == policy[:len_index]) & 
+
+        death_accel_data = deltas[(deltas['policy_type'] == policy[:len_index]) &
                                   (deltas['start_stop'] == start_stop)][f'death_{measure_period}_day_accel']
 
         num_samples.append(len(case_data))
-        
+
         # Calculate the averages and standard deviations for each policy
         case_avg.append(np.nanmean(case_data.to_numpy()))
         death_avg.append(np.nanmean(death_data.to_numpy()))
-            
+
         case_std.append(np.nanstd(case_data.to_numpy()))
         death_std.append(np.nanstd(death_data.to_numpy()))
-        
+
         case_accel_avg.append(np.nanmean(case_accel_data.to_numpy()))
         death_accel_avg.append(np.nanmean(death_accel_data.to_numpy()))
-        
+
         case_accel_std.append(np.nanstd(case_accel_data.to_numpy()))
         death_accel_std.append(np.nanstd(death_accel_data.to_numpy()))
-        
-        
-        
+
+
+
     # Construct the dataframe to tabulate the data.
-    delta_stats = pd.DataFrame(np.transpose([case_avg, case_accel_avg, death_avg, death_accel_avg, 
-                                             case_std, case_accel_std, death_std, death_accel_std, 
-                                             num_samples]), index=policy_types, 
-                               columns=['case_avg', 'case_accel_avg', 'death_avg', 'death_accel_avg', 
-                                        'case_std', 'case_accel_std', 'death_std', 'death_accel_std', 
+    delta_stats = pd.DataFrame(np.transpose([case_avg, case_accel_avg, death_avg, death_accel_avg,
+                                             case_std, case_accel_std, death_std, death_accel_std,
+                                             num_samples]), index=policy_types,
+                               columns=['case_avg', 'case_accel_avg', 'death_avg', 'death_accel_avg',
+                                        'case_std', 'case_accel_std', 'death_std', 'death_accel_std',
                                         'num_samples']
                               )
 
     # Drop record with less than min_samples samples.
     delta_stats.drop(delta_stats[delta_stats['num_samples'] <= min_samples].index, inplace=True)
-    
+
     return delta_stats
 
 ##################################################################################
@@ -797,26 +801,26 @@ def prep_policy_data(policy_data,
     policy_dict: dictionary to rename / aggregate policy types
     min_samples: throw out policies that were not implemented many times
     """
-    
+
     proc_policy_data = policy_data.copy()
-    
+
     # Replace policies with the ones in policy_dict(). 
     for key in policy_dict.keys():
         proc_policy_data['policy_type'].replace(to_replace=key, value=policy_dict[key], inplace=True)
-        
+
     # Define a new field that includes policy_type, start_stop, and policy_level information
     proc_policy_data.loc[:, 'full_policy'] = proc_policy_data['policy_type'] + " - " +\
                                         proc_policy_data['start_stop'] + " - " +\
                                         proc_policy_data['policy_level']
-    
+
     # Get number of times each policy was implemented.
     num_samples = proc_policy_data['full_policy'].value_counts()
-    
+
     # drop the policy if it was implemented fewer than min_policy times. 
     proc_policy_data = proc_policy_data.drop(proc_policy_data[
         proc_policy_data['full_policy'].isin(num_samples[num_samples.values < min_samples].index)
     ].index)
-    
+
     # return the DataFrame
     return proc_policy_data
 
@@ -843,15 +847,13 @@ def prepare_new_df(case_data):
     info_cols = pd.MultiIndex.from_tuples(tuples_info)
     new_df = pd.DataFrame(columns = info_cols)
     new_df[tuples_info] = case_data[case_data_cols]
-    
+
     return new_df
 
-
-
-def get_date_range(date, start_move=0, stop_move=7): 
+def get_date_range(date, start_move=0, stop_move=7):
     """Get the date range from date+start_move to date+stop_move"""
 
-    return pd.date_range(start=date+timedelta(days=start_move), 
+    return pd.date_range(start=date+timedelta(days=start_move),
                             end=date+timedelta(days=stop_move))
 
 
@@ -875,12 +877,12 @@ def prepare_data(case_data: pd.DataFrame,
 
     filename = file_id.replace(" - ", "_") +\
                 "-bins=" + ''.join([str(b[0])+"-"+str(b[1])+"_" for b in bins_list])[:-1] + ".csv"
-    
+
     if not force_rerun and os.path.exists(save_path + filename):
         new_df = pd.read_csv(save_path + filename, index_col=0, header=[0, 1])
         new_df[('info', 'date')] = pd.to_datetime(new_df[('info', 'date')], format='%Y-%m-%d')
         return new_df
-    
+
     ### initialize the new dataframe
     if new_df is None:
         new_df = prepare_new_df(case_data)
@@ -940,7 +942,7 @@ def prepare_data(case_data: pd.DataFrame,
     ### reload the dataframe from file if applicable
     filename = file_id.replace(" - ", "_") +\
                 "-bins=" + ''.join([str(b[0])+"-"+str(b[1])+"_" for b in bins_list])[:-1] + ".csv"
-    
+
     if not force_rerun and os.path.exists(save_path + filename):
         new_df = pd.read_csv(save_path + filename, index_col=0, header=[0, 1])
         new_df[('info', 'date')] = pd.to_datetime(new_df[('info', 'date')], format='%Y-%m-%d')
@@ -953,7 +955,7 @@ def generate_dataset_group(bins_list,
     Parameters
     ----------
     bins_list
-    
+
     policy_dict
 
     min_samples
@@ -961,11 +963,11 @@ def generate_dataset_group(bins_list,
 
     case_data = clean_covid_data()
     policy_data = clean_policy_data()
-    
+
     policy_data_prepped = prep_policy_data(policy_data=policy_data,
                                            policy_dict=policy_dict,
                                            min_samples=min_samples)
-    
+
     all_policies = policy_data_prepped['full_policy'].unique()
     new_df = prepare_new_df(case_data)
 
