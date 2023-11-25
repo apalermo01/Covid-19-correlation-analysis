@@ -13,4 +13,4 @@ jupyterlab-vim
 flake8
 isort
 mypy
-
+black

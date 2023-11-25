@@ -15,6 +15,10 @@ The core of this project exists in a series of jupyter notebooks, which are orga
 
 # Objectives for next round of development
 
-- [ ] re-run models using multiple policies in one go, see if the p-values change
-- [ ] re-run the models but remove one of the categorical variables
-- [ ] re-run models using decision trees, random forests, and / or XGBoost
+- [ ] run the simplest model (sklearn linear regression) on single policy (training set) -> analyze RMSE values and coefficients for 3 different sets of bins
+- [ ] use stats models to get p-values from the same kind of model -> compare p values on the same set of bins
+- [ ] implement logic to run forward selection on bins based on rmse.
+- [ ] run forward selection on bins for each policy -> look at rmse values (training set)
+- [ ] Repeat this process with random forests: start with the same set of 3 bins, compare rmse against linear regression, and analyze the parameters (if I try a decision tree first).
+- [ ] Re-run linear regression and decision trees while trying multiple policies
+- [ ] start looking into bayesian methods
