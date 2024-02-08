@@ -81,44 +81,6 @@ def generate_dataset_group(bins_list, policy_dict, min_samples=3):
         )
 
 
-def prep_policy_data(policy_data, policy_dict, min_samples=3):
-    """Derives a new policy name in the form <policy name> - <start / stop> - <level>
-    df2: DataFrame with the policy data
-    policy_dict: dictionary to rename / aggregate policy types
-    min_samples: throw out policies that were not implemented many times
-    """
-
-    proc_policy_data = policy_data.copy()
-
-    # Replace policies with the ones in policy_dict().
-    for key in policy_dict.keys():
-        proc_policy_data["policy_type"].replace(
-            to_replace=key, value=policy_dict[key], inplace=True
-        )
-
-    # Define a new field that includes policy_type, start_stop, and policy_level information
-    proc_policy_data.loc[:, "full_policy"] = (
-        proc_policy_data["policy_type"]
-        + " - "
-        + proc_policy_data["start_stop"]
-        + " - "
-        + proc_policy_data["policy_level"]
-    )
-
-    # Get number of times each policy was implemented.
-    num_samples = proc_policy_data["full_policy"].value_counts()
-
-    # drop the policy if it was implemented fewer than min_policy times.
-    proc_policy_data = proc_policy_data.drop(
-        proc_policy_data[
-            proc_policy_data["full_policy"].isin(
-                num_samples[num_samples.values < min_samples].index
-            )
-        ].index
-    )
-
-    # return the DataFrame
-    return proc_policy_data
 
 
 def prepare_new_df(case_data):
