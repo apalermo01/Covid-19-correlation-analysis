@@ -9,8 +9,8 @@ tabulate
 sodapy
 us
 jupyter
-jupyterlab-vim
 flake8
 isort
 mypy
 black
+statsmodels

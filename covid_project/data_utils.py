@@ -251,7 +251,8 @@ def clean_covid_data(
     if df is None:
         if os.path.exists(clean_path) and not force_reclean:
             df = pd.read_csv(clean_path, index_col=0)
-            df["date"] = pd.to_datetime(df["date"], format="%Y-%m-%d")
+            # df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')  
+            df['date'] = pd.to_datetime(df['date'])
             return df
 
         df = load_covid_data(path, force_reload)
@@ -288,7 +289,8 @@ def clean_covid_data(
     df = df.drop(df[df["state"].isin(["Puerto Rico", "District of Columbia"])].index)
 
     # ensure date is stored as a datetime
-    df["date"] = pd.to_datetime(df["date"].str[:10], format="%Y-%m-%d")
+    #df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')  
+    df['date'] = pd.to_datetime(df['date'])
 
     # fill in missing population data
     # https://data.statesmanjournal.com/census/total-population/total-population-change/chugach-census-area-alaska/050-02063/
@@ -462,17 +464,11 @@ def clean_policy_data(
     df["fips_code"] = df["fips_code"].astype(np.int64)
 
     # fix typos in date
-    bad_mask = df["date"].str.contains("0020")
-    df.loc[bad_mask, "date"] = [
-        "2020" + elem[4:] for elem in df.loc[bad_mask, "date"].values
-    ]
-    df["date"] = pd.to_datetime(df["date"].str[:10], format="%Y-%m-%d")
-    df = df.drop(
-        df[
-            (df["date"] < min(timeseries_df["date"]))
-            | (df["date"] > max(timeseries_df["date"]))
-        ].index
-    )
+    bad_mask = df['date'].str.contains('0020')
+    df.loc[bad_mask, 'date'] = ['2020' + elem[4:] for elem in df.loc[bad_mask, 'date'].values]
+    # df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
+    df['date'] = pd.to_datetime(df['date'])
+    df = df.drop(df[(df['date']<min(timeseries_df['date'])) | (df['date']>max(timeseries_df['date']))].index)
 
     # handle policy names
     policy_replacements_dict = {
