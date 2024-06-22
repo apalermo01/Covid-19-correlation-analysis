@@ -47,39 +47,39 @@ def generate_state_case_dict(
 
 
 def calculate_deltas(
-    case_df,
-    policy_df,
-    measure_period=14,
-    filtered_policies=None,
-    state_cases_dict=None,
-    save_state_data=True,
-    load_state_data_from_file=True,
-    state_data_path="./data/state_data/",
-    results_path="./data/deltas/",
-    force_run=False,
-    save_results=True,
-    disable_pbar=False,
+        case_df: pd.DataFrame,
+        policy_df: pd.DataFrame,
+        measure_period: int = 14,
+        filtered_policies: List = None,
+        state_cases_dict: Dict = None,
+        save_state_data: bool = True,
+        load_state_data_from_file: bool = True,
+        state_data_path: str = "./data/state_data/",
+        results_path: str = "./data/deltas/",
+        force_run: bool = False,
+        save_results: bool = True,
+        disable_pbar: bool = False,
 ):
     """For every policy implementation at the state and county level, calculate the change in case and death numbers.
 
     Parameters
     ----------
-    case_df : pandas DataFrame
+    case_df : DataFrame
         output of clean_case_data()
-    policy_df : pandas DataFrame
+    policy_df : DataFrame
         output of clean_policy_data()
     measure_period : int
         time to wait (in days) before measuring a change in new case or death numbers (14 by default)
     filtered_policies : array-like
         specify policies to select (default: None- calulate deltas for all policies)
-    state_cases_dict :
-    save_state_data :
-    load_state_data_from_file :
-    state_data_path :
-    results_path :
-    force_run :
-    save_results :
-    disable_pbar : boolean
+    state_cases_dict : Dict
+    save_state_data : bool
+    load_state_data_from_file : bool
+    state_data_path : str
+    results_path : str
+    force_run : bool
+    save_results : bool
+    disable_pbar : bool
         If true, suppresses progress bar
 
 
