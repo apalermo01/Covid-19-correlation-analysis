@@ -7,6 +7,7 @@ import os
 import re
 from datetime import datetime, timedelta
 from typing import Dict, List, Tuple, Union
+from covid_project.policy_mappings import policy_dict_v2
 
 import numpy as np
 import pandas as pd

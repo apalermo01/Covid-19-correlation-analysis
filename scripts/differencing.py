@@ -11,6 +11,7 @@ import numpy as np
 from covid_project import data_cleaning as dc
 from covid_project.diffs import calculate_diffs, generate_state_case_dict
 # from tqdm import tqdm
+from covid_project.policy_mappings import policy_dict_v2
 from tqdm.auto import tqdm
 import warnings
 import matplotlib.pyplot as plt
@@ -22,6 +23,7 @@ import matplotlib.pyplot as plt
 def main():
     case_data = dc.clean_covid_data()
     policy_data = dc.clean_policy_data()
+    policy_data['policy_type'] = policy_data['policy_type'].replace(policy_dict_v2)
     state_case_dict = generate_state_case_dict(case_data,
                                                save_data = True,
                                                load_from_file = True)
