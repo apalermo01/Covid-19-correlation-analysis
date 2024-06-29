@@ -10,16 +10,11 @@ from datetime import timedelta
 import numpy as np
 from covid_project import data_cleaning as dc
 from covid_project.diffs import calculate_diffs, generate_state_case_dict
-# from tqdm import tqdm
 from covid_project.policy_mappings import policy_dict_v2
 from tqdm.auto import tqdm
 import warnings
 import matplotlib.pyplot as plt
 
-# def main():
-#     from time import sleep
-#     for i in tqdm(range(4, 30)):
-#        sleep(0.1) 
 def main():
     case_data = dc.clean_covid_data()
     policy_data = dc.clean_policy_data()

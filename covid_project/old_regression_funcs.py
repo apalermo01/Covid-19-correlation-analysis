@@ -147,49 +147,6 @@ def plot_rsquared_heatmap(data,
 ###########################################
 
 
-def prep_policy_data(policy_data,
-                     min_samples=10,):
-    """Preprocess the policy data for Machine Learning models.
-
-    Parameters
-    ------------
-    df2: DataFrame
-            policy data
-    policy_dict: dictionary
-            Dictionary defined in policy_dict.py to rename and aggregate policies.
-    min_samples: integer
-            Throw out policies that were not implemented min_samples times.
-
-    Returns
-    ----------
-    proc_policy_data: DataFrame
-            The preprocessed policy data
-    """
-
-    # Replace policies with the ones in policy_dict().
-    for key in policy_dict_v1.keys():
-        policy_data['policy_type'].replace(
-            to_replace=key, value=policy_dict_v1[key], inplace=True)
-
-    # Define a new field that includes policy_type, start_stop,
-    # and policy_level information
-    policy_data.loc[:, 'full_policy'] =\
-    policy_data['policy_type'] + " - " +\
-    policy_data['start_stop'] + " - " +\
-    policy_data['policy_level']
-
-    # Get number of times each policy was implemented.
-    num_samples = proc_policy_data['full_policy'].value_counts()
-
-    # drop the policy if it was implemented fewer than min_policy times.
-    proc_policy_data = proc_policy_data.drop(proc_policy_data[
-        proc_policy_data['full_policy'].isin(
-                num_samples[num_samples.values < min_samples].index)
-    ].index)
-
-    # return the DataFrame
-    return proc_policy_data
-
 
 def join_policies(case_df,
                   policy_df,

@@ -6,8 +6,15 @@ import pandas as pd
 from covid_project.data_cleaning import clean_covid_data, clean_policy_data
 from typing import List, Union
 import statsmodels.api as sm
+from tqdm.auto import tqdm
+import os
+from datetime import timedelta
+import json
 
-def generate_dataset_group(bins_list,
+pd.set_option('future.no_silent_downcasting', True)
+
+def generate_dataset_group_single_policy(
+                           bins_list,
                            policy_dict,
                            min_samples=3):
     """Generate datasets for every policy for a given group of bins
@@ -34,11 +41,81 @@ def generate_dataset_group(bins_list,
         prepare_data_single_policy(
             case_data=case_data,
             policy_data_prepped = policy_data_prepped,
-            policy_name = policy,
+            policies = policy,
             bins_list = bins_list,
             pbar = False,
             new_df=new_df)
 
+
+def prep_policy_data(policy_data,
+                     policy_dict,
+                     min_samples=10,):
+    """Preprocess the policy data for Machine Learning models.
+
+    Parameters
+    ------------
+    df2: DataFrame
+            policy data
+    policy_dict: dictionary
+            Dictionary defined in policy_dict.py to rename and aggregate policies.
+    min_samples: integer
+            Throw out policies that were not implemented min_samples times.
+
+    Returns
+    ----------
+    proc_policy_data: DataFrame
+            The preprocessed policy data
+    """
+
+    # Replace policies with the ones in policy_dict().
+    policy_data['policy_type'] = policy_data['policy_type'].replace(policy_dict)
+
+    # Define a new field that includes policy_type, start_stop,
+    # and policy_level information
+    policy_data.loc[:, 'full_policy'] =\
+    policy_data['policy_type'] + " - " +\
+    policy_data['start_stop'] + " - " +\
+    policy_data['policy_level']
+
+    proc_policy_data = policy_data.copy()
+
+    # Get number of times each policy was implemented.
+    num_samples = proc_policy_data['full_policy'].value_counts()
+
+    # drop the policy if it was implemented fewer than min_samples times.
+    proc_policy_data = proc_policy_data.drop(proc_policy_data[
+        proc_policy_data['full_policy'].isin(
+                num_samples[num_samples.values < min_samples].index)
+    ].index)
+
+    # return the DataFrame
+    return proc_policy_data
+
+def prepare_new_df(case_data):
+    """Initialize the new dataframe"""
+
+    dependent_vars = [
+        'new_cases_1e6',
+        'new_deaths_1e6',
+        'new_cases_7day_1e6',
+        'new_deaths_7day_1e6',
+    ]
+
+    tuples_info = [('info', 'location_type'),
+               ("info", "state"),
+               ("info", "county"),
+               ("info", "date"),]
+
+    dependent_cols = [("info", e) for e in dependent_vars]
+    tuples_info = tuples_info + dependent_cols
+    case_data_cols = ['location_type', 'state', 'county', 'date']
+    case_data_cols = case_data_cols + dependent_vars
+
+    info_cols = pd.MultiIndex.from_tuples(tuples_info)
+    new_df = pd.DataFrame(columns = info_cols)
+    new_df[tuples_info] = case_data[case_data_cols]
+    
+    return new_df
 
 def prepare_data_single_policy(
     case_data: pd.DataFrame,
@@ -127,6 +204,13 @@ def prepare_data_single_policy(
         new_df.to_csv(save_path + filename)
     return new_df
 
+def get_date_range(date, start_move=0, stop_move=7):
+    """Get the date range from date+start_move to date+stop_move"""
+
+    return pd.date_range(
+        start=date + timedelta(days=start_move), end=date + timedelta(days=stop_move)
+    )
+
 def get_single_policy_regression_data(
                     policy_name,
                     bins_list,
@@ -153,7 +237,6 @@ def get_single_policy_regression_data(
     else:
         return False, None
     
-
 def fit_ols_model_single_policy(data,
                                 policy_name,
                                 dep_var,

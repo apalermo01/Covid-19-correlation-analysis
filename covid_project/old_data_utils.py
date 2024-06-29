@@ -54,40 +54,9 @@ def get_single_policy_regression_data(
 ##################################################################################
 
 
-def get_date_range(date, start_move=0, stop_move=7):
-    """Get the date range from date+start_move to date+stop_move"""
-
-    return pd.date_range(
-        start=date + timedelta(days=start_move), end=date + timedelta(days=stop_move)
-    )
 
 
 
-def prepare_new_df(case_data):
-    """Initialize the new dataframe"""
-
-    dependent_vars = [
-        'new_cases_1e6',
-        'new_deaths_1e6',
-        'new_cases_7day_1e6',
-        'new_deaths_7day_1e6',
-    ]
-
-    tuples_info = [('info', 'location_type'),
-               ("info", "state"),
-               ("info", "county"),
-               ("info", "date"),]
-
-    dependent_cols = [("info", e) for e in dependent_vars]
-    tuples_info = tuples_info + dependent_cols
-    case_data_cols = ['location_type', 'state', 'county', 'date']
-    case_data_cols = case_data_cols + dependent_vars
-
-    info_cols = pd.MultiIndex.from_tuples(tuples_info)
-    new_df = pd.DataFrame(columns = info_cols)
-    new_df[tuples_info] = case_data[case_data_cols]
-    
-    return new_df
 
 def prepare_data(case_data,
                  policy_data_prepped,
