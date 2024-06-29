@@ -1,6 +1,12 @@
 """
 Functions for notebooks 5 and 6 - linear regression
 """
+
+import pandas as pd
+from covid_project.data_cleaning import clean_covid_data, clean_policy_data
+from typing import List, Union
+import statsmodels.api as sm
+
 def generate_dataset_group(bins_list,
                            policy_dict,
                            min_samples=3):
@@ -46,6 +52,7 @@ def prepare_data_single_policy(
     pbar: bool = True,
     new_df: Union[None, pd.DataFrame] = None,
 ) -> pd.DataFrame:
+
     ### reload the dataframe from file if applicable
     if file_id is None and isinstance(policies, str):
         file_id = policies
@@ -119,3 +126,69 @@ def prepare_data_single_policy(
             os.makedirs(save_path)
         new_df.to_csv(save_path + filename)
     return new_df
+
+def get_single_policy_regression_data(
+                    policy_name,
+                    bins_list,
+                    root_path="./data/single_policy_bins/",):
+    """           
+    Parameters
+    ----------
+    policy_name
+
+    bins_list
+
+    root_path
+
+    """
+
+    ### TODO: add option to generate processed data if the file is not present
+    filename = policy_name.replace(" - ", "_") +\
+                "-bins=" + ''.join([str(b[0])+"-"+str(b[1])+"_" for b in bins_list])[:-1] + ".csv"
+    path = root_path + filename
+
+    if os.path.exists(path):
+        data = pd.read_csv(root_path + filename, header=[0, 1], index_col=0)
+        return True, data
+    else:
+        return False, None
+    
+
+def fit_ols_model_single_policy(data,
+                                policy_name,
+                                dep_var,
+                                use_const=True):
+    """Fit an ols model from statsmodels
+
+    Parameters
+    ----------
+    data
+
+    policy_name
+
+    dep_var
+
+    use_const
+
+    Returns
+    ---------
+    dictionary containing the coefficience (params), standard error of the coefficients (std_err),
+    r^2 value (r_squared) and the p values (p_values)
+    """
+    y = data[('info', dep_var)]
+    X = data[policy_name]
+
+    if use_const:
+        X = sm.add_constant(X)
+
+    model = sm.OLS(y, X)
+    results = model.fit()
+
+    results_dict = {
+        'r_squared': results.rsquared,
+        'p_values': results.pvalues.to_dict(),
+        'params': results.params.to_dict(),
+        'std_err': results.bse.to_dict()
+    }
+
+    return results_dict

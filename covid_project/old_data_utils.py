@@ -18,7 +18,8 @@ from tqdm.notebook import tqdm
 
 logger = logging.getLogger(__name__)
 
-def get_processed_data(policy_name,
+def get_single_policy_regression_data(
+                    policy_name,
                     bins_list,
                     root_path="./data/single_policy_bins/",):
     """           
@@ -43,69 +44,8 @@ def get_processed_data(policy_name,
     else:
         return False, None
 
-def get_all_policies(policy_dict: Dict, min_samples: int):
-    """Generate an array of all 'full' policy names.
-    By 'full' policy name, I mean '<policy> - <start | stop> - <county | state>
-
-    Parameters
-    ----------
-    policy_dict : Dict
-       Dictionary of policy mappings (policy name -> new policy name)
-
-    min_samples : int
-        minimum number of times the policy has to be found in the dataset to stay in
-        the array
-
-    Returns
-    ---------
-    np.array containing all policy names
-    """
-    policy_data = clean_policy_data()
-    policy_data_prepped = prep_policy_data(
-        policy_data=policy_data, policy_dict=policy_dict, min_samples=min_samples
-    )
-    all_policies = policy_data_prepped["full_policy"].unique()
-    return all_policies
 
 
-def prep_policy_data(policy_data, policy_dict, min_samples=3):
-    """Derives a new policy name in the form <policy name> - <start / stop> - <level>
-    df2: DataFrame with the policy data
-    policy_dict: dictionary to rename / aggregate policy types
-    min_samples: throw out policies that were not implemented many times
-    """
-
-    proc_policy_data = policy_data.copy()
-
-    # Replace policies with the ones in policy_dict().
-    for key in policy_dict.keys():
-        proc_policy_data["policy_type"].replace(
-            to_replace=key, value=policy_dict[key], inplace=True
-        )
-
-    # Define a new field that includes policy_type, start_stop, and policy_level information
-    proc_policy_data.loc[:, "full_policy"] = (
-        proc_policy_data["policy_type"]
-        + " - "
-        + proc_policy_data["start_stop"]
-        + " - "
-        + proc_policy_data["policy_level"]
-    )
-
-    # Get number of times each policy was implemented.
-    num_samples = proc_policy_data["full_policy"].value_counts()
-
-    # drop the policy if it was implemented fewer than min_policy times.
-    proc_policy_data = proc_policy_data.drop(
-        proc_policy_data[
-            proc_policy_data["full_policy"].isin(
-                num_samples[num_samples.values < min_samples].index
-            )
-        ].index
-    )
-
-    # return the DataFrame
-    return proc_policy_data
 
 
 
