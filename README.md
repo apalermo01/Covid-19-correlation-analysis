@@ -90,3 +90,15 @@ Development notebook where I'm testing ARIMA models.
 - install dependencies: `pip install -r requirements.txt`
 - install the project as a package: `pip install --editable .`
 - run `python main.py` to download and clean the dataset
+
+
+# Idea list
+- Re-run linear regression models (notebook 5)
+- linear regression with some exponential function to represent policy enactment (notebook 6)
+- run some time series models.
+    - start by exploring one county
+    - open question: what's the best way to generalize these models to all time
+- linear regression: add extra variables
+    - include national case numbers
+    - include other regressors - join on weather temperature data
+
