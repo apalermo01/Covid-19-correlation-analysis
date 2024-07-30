@@ -28,20 +28,6 @@ This started as my first ever python project - trying to make some simple visual
 
 - **Outcome**: Hundreds of input features made fitting models computationally expensive and results unconvincing and difficult to interpret. This attempt is in the archive folder of this project.
 
-
-### Phase 4: Focused Linear Regression
-- **Goal**: Apply only linear regression models and dummy variables that represent a single policy to make the hyperparameter tuning in phase 3 faster.
-
-- **Outcome**: Found numerous policies with significant p-values. However, I faced challenges with analyzing a vast array of bin structures and the lack of interaction terms between policies left a lot on the table in terms of performance
-
-
-### Phase 5: Time series and refined regression models
-
-- **Goal**:  Explore time series models (ARIMA) and re-think old regression approaches to find better ways to explore the results
-
-- **Outcome**: This phase is in progress.
-
-
 ## Data Sources
 
 - **Case and Death Data**: dataworld / https://data.world/associatedpress/johns-hopkins-coronavirus-case-tracker/workspace/file?filename=2_cases_and_deaths_by_county_timeseries.csv
@@ -69,11 +55,9 @@ This notebook was the original goal of this project. I started this shortly afte
 Here, I'm studying the average change in cases and deaths 14 days after a policy was implemented. I found that 'aca special enrollment period - start' and 'suspend elective dental procedures - start' seemed to have the most significant impact. However, I knew when reflecting on this approach that there was a better way that I hadn't found yet.
 
 ![Average change in covid metrics](./figures/average_change_in_covid_metrics_14_days.png')
-### 05: Running the first round of linear regression
-This notebook is more of a script to run the models described in my third approach. The actual discussion is in notebook 6. 
 
-### 06: Analyzing first round of regression results
-Looking through the R-squared and p-values for each of the linear models built for a single policy on a few different date distributions.
+### 05: Linear Regression
+Ran some basic linear regression models described in phase 3. While many of the coefficients for these policies had significant p-values, I observed very low R-squared values and a nonlinear relationship when plotting residuals vs. predictions. This is not surprising since modeling a pandemic requires a more sophisticated model than a simple linear regression. Based on these observations I don't think I can make any meaningful conclusions about the impact of individual policies. Since this project has been in development for many years at this point, and my ideas for next steps are getting much more sophisticated than the original approach, I'm going to build out the next set of models in a new repository.
 
 ![R-squared value](./figures/r_squared_for_regression_results.png)
 
@@ -93,7 +77,7 @@ Development notebook where I'm testing ARIMA models.
 
 
 # Idea list
-- Re-run linear regression models (notebook 5)
+- Re-run linear regression models (notebook 5) (done)
 - linear regression with some exponential function to represent policy enactment (notebook 6)
 - run some time series models.
     - start by exploring one county
@@ -102,3 +86,16 @@ Development notebook where I'm testing ARIMA models.
     - include national case numbers
     - include other regressors - join on weather temperature data
 
+Idea list version 2:
+
+Based on the results of linear regression, we probably shouldn't treat this as a linear model. The core of the modeling I'm doing runs under the assumption that the change in case numbers is a function of the lag on policies, so let's ste up some models that directly take advantage of that assumption:
+
+- Bayesian model: output = f(days since policy a) + f(days since policy b) + f(days since policy c) + ...
+- Bayesian model: interaction terms? might be out of scope for this project
+    - variants:
+          - add lag variables
+          - join on temperature data
+          - any other data that I might want to join on?
+          - heirarchical bayesian modeling to take account for locations? (might be out of scope for this iteration given my knowledge)
+
+- neural network: make an MLP that takes in # of days since a policy was implemented - add the same variations
