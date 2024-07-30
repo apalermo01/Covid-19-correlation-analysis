@@ -61,9 +61,6 @@ Ran some basic linear regression models described in phase 3. While many of the 
 
 ![R-squared value](./figures/r_squared_for_regression_results.png)
 
-### Dev - time series
-Development notebook where I'm testing ARIMA models.
-
 # Setup
 
 - Clone the project: `git clone git@github.com:apalermo01/Covid-19-correlation-analysis.git`
@@ -75,27 +72,3 @@ Development notebook where I'm testing ARIMA models.
 - install the project as a package: `pip install --editable .`
 - run `python main.py` to download and clean the dataset
 
-
-# Idea list
-- Re-run linear regression models (notebook 5) (done)
-- linear regression with some exponential function to represent policy enactment (notebook 6)
-- run some time series models.
-    - start by exploring one county
-    - open question: what's the best way to generalize these models to all time
-- linear regression: add extra variables
-    - include national case numbers
-    - include other regressors - join on weather temperature data
-
-Idea list version 2:
-
-Based on the results of linear regression, we probably shouldn't treat this as a linear model. The core of the modeling I'm doing runs under the assumption that the change in case numbers is a function of the lag on policies, so let's ste up some models that directly take advantage of that assumption:
-
-- Bayesian model: output = f(days since policy a) + f(days since policy b) + f(days since policy c) + ...
-- Bayesian model: interaction terms? might be out of scope for this project
-    - variants:
-          - add lag variables
-          - join on temperature data
-          - any other data that I might want to join on?
-          - heirarchical bayesian modeling to take account for locations? (might be out of scope for this iteration given my knowledge)
-
-- neural network: make an MLP that takes in # of days since a policy was implemented - add the same variations
